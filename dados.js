@@ -72,7 +72,7 @@ const ITEMS = [
     price: "R$ 50,00",
     desc: [
         "Algumas marcas de uso (descascado)",
-        "Medidas: 50cm de altura, 40cm de largura e 30cm de profundidade."
+        "Medidas: 56cm de altura, 45cm de largura e 45cm de profundidade."
     ],
     photos: [
         "fotos/Mesinha de Cabeceira.jpeg",
@@ -109,8 +109,8 @@ const ITEMS = [
         "Pé palito em madeira",
         "Tecido suede azul", 
         "Estrutura de madeira",
-        "Medidas da poltrona: 0,80m x 0,80m x 0,90m",
-        "Medidas da namoradeira: 1,40m x 0,80m x 0,90m",
+        "Medidas da poltrona: 78cm x 65cm x 80cm",
+        "Medidas da namoradeira: 130cm x 65cm x 80cm",
         "Assento da namoradeira deformado",
         "Tecido da poltrona levemente desbotado"
     ],
@@ -391,6 +391,170 @@ const ITEMS = [
     ],
     photos: [
         "fotos/Boardgame/dedin.jpg"
+    ]
+  },
+  {
+    name: "Mesa de Centro",
+    ativo: true,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 50,00",
+    desc: [
+        "Mesa de madeira",
+        "Medidas: 60cm x 90cm x 41cm.",
+        "Algumas marcas de uso"
+    ],
+    photos: [
+        "fotos/Mesa de Centro (1).jpeg",
+        "fotos/Mesa de Centro (2).jpeg",
+        "fotos/Mesa de Centro (3).jpeg"
+    ]
+  },
+  {
+    name: "Adega Climatizada",
+    ativo: true,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 400,00",
+    desc: [
+        "Adega Climatizada Electrolux 8 garrafas",
+        "Medidas: 51cm x 25,5cm x 41,5cm."
+    ],
+    photos: [
+        "fotos/Adega Climatizada (1).jpeg",
+        "fotos/Adega Climatizada (5).jpeg",
+        "fotos/Adega Climatizada (6).jpeg",
+        "fotos/Adega Climatizada (7).jpeg",
+        "fotos/Adega Climatizada (4).jpeg",
+        "fotos/Adega Climatizada (3).jpeg",
+        "fotos/Adega Climatizada (2).jpeg"
+    ]
+  },
+  {
+    name: "Rack de Madeira",
+    ativo: true,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 50,00",
+    desc: [
+        "Medidas: 180cm x 47cm x 56cm.",
+        "Possui 4 gavetas",
+        "Algumas marcas de uso"
+    ],
+    photos: [
+        "fotos/Rack 4 gavetas (1).jpeg",
+        "fotos/Rack 4 gavetas (2).jpeg"
+    ]
+  },
+  {
+    name: "Quadro a Criação de Adão",
+    ativo: true,
+    category: "decoracao",
+    type: "venda",
+    price: "R$ 50,00",
+    desc: [
+        "Medidas: 47,5cm x 33,5cm",
+        "Quebra cabeça do quadro de Michelangelo da capela cistina",
+        "Moldura de madeira",
+        "Vidro frontal fosco"
+    ],
+    photos: [
+        "fotos/Quadro Criação do Homem (2).jpeg",
+        "fotos/Quadro Criação do Homem (1).jpeg"
+    ]
+  },
+
+  {
+    name: "Quadro a Dolomita",
+    ativo: true,
+    category: "decoracao",
+    type: "venda",
+    price: "R$ 50,00",
+    desc: [
+        "Medidas: 126,5cm x 82cm",
+        "Quebra cabeça da montanha Dolomita",
+        "Moldura de madeira",
+        "Vidro frontal fosco"
+    ],
+    photos: [
+        "fotos/Quadro Dolomita (2).jpeg",
+        "fotos/Quadro Dolomita (1).jpeg"
+    ]
+  },
+  {
+    name: "Armário de Quina",
+    ativo: true,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 200,00",
+    desc: [
+        "Armário de quina de madeira",
+        "Medidas: 72,5cm x 38cm x 52,5cm e 160cm altura",
+    ],
+    photos: [
+        "fotos/Estante de Quina (1).jpeg",
+        "fotos/Estante de Quina (2).jpeg"
+    ]
+  },
+  {
+    name: "Mesa de 6 Lugares",
+    ativo: true,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 2500,00",
+    desc: [
+        "Medidas: 180cm x 90cm x 80cm",
+        "Mesa de Laca Preto",
+        "6 lugares",
+        "quinas arredondadas",
+        "Pé em X de madeira maciça",
+        "Tecido das cadeiras com marcas de uso"
+    ],
+    photos: [
+        "fotos/Mesa (1).jpeg",
+        "fotos/Mesa (3).jpeg",
+        "fotos/Mesa (4).jpeg",
+        "fotos/Mesa (2).jpeg",
+        "fotos/Mesa (5).jpeg",
+        "fotos/Mesa (6).jpeg",
+        "fotos/Mesa (7).jpeg"
+    ]
+  },
+  {
+    name: "Escova Rotativa",
+    ativo: true,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 100,00",
+    desc: [
+        "Secador de cabelo giratório",
+        "Marca: MONDIAL",
+        "Modelo: ER-11-AR",
+        "Potência: 1000W",
+        "Voltagem: 127V"
+    ],
+    photos: [
+        "fotos/Secador Giratório (1).jpeg",
+        "fotos/Secador Giratório (2).jpeg",
+        "fotos/Secador Giratório (3).jpeg"
+    ]
+  },
+  {
+    name: "Raquete de Tênis + Overgrip",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 100,00",
+    desc: [
+        "Marca: HEAD",
+        "Modelo: ",
+        "2 Overgrips ARTENGO",
+        "Capa protetora da raquete"
+
+    ],
+    photos: [
+        "fotos/Raquete de Tennis (2).jpeg",
+        "fotos/Raquete de Tennis (1).jpeg"
     ]
   },
 ];
