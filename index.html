@@ -249,6 +249,13 @@
     margin-bottom:12px;
     min-height:18px;
   }
+  .tag .desc ul{
+    margin:0;
+    padding-left:16px;
+  }
+  .tag .desc li{
+    margin-bottom:2px;
+  }
   .price{
     font-family:'Space Mono', monospace;
     font-weight:700;
@@ -339,8 +346,8 @@
 </head>
 <body>
 <header>
-  <div class="stamp">Tudo tem que sair</div>
-  <p>ITENS À VENDA E DOAÇÃO</p>
+  <div class="stamp">venda e doação</div>
+  <p>O valor de qualquer item é negociável</p>
 </header>
 <div class="search-wrap">
   <input type="text" id="searchInput" placeholder="Buscar item (ex: roupa, mesa, panela)...">
@@ -351,41 +358,10 @@
 <div class="count" id="countLabel"></div>
 <div id="grid"></div>
 <div class="pagination" id="pagination"></div>
-<footer>catálogo pessoal · fale por WhatsApp em cada item</footer>
+<footer>catálogo pessoal · chame no WhatsApp</footer>
+
+<script src="dados.js"></script>
 <script>
-/* ======= CONFIGURE AQUI ======= */
-const WHATSAPP_NUMBER = "5531991924908"; // troque pelo seu número, formato 55DDDNUMERO
-const ITEMS_PER_PAGE = 10;
-const ICONS = {
-  moveis: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="8" y="26" width="48" height="18" rx="2"/><path d="M10 44v8M54 44v8"/><path d="M8 26v-6a6 6 0 0 1 6-6h36a6 6 0 0 1 6 6v6"/></svg>`,
-  eletro: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="14" y="8" width="36" height="48" rx="3"/><circle cx="32" cy="34" r="10"/><path d="M20 16h6"/></svg>`,
-  cozinha: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><path d="M18 8v20a10 10 0 0 0 10 10v18M18 8v14M26 8v14"/><path d="M46 8c-6 4-6 12-2 16l2 2v30"/></svg>`,
-  decoracao: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="10" y="10" width="44" height="34" rx="2"/><path d="M10 34l12-12 10 10 10-14 12 16"/><circle cx="20" cy="20" r="3"/></svg>`,
-  outros: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><path d="M32 8l24 12v24L32 56 8 44V20z"/><path d="M8 20l24 12 24-12M32 32v24"/></svg>`
-};
-const CATEGORIES = {
-  moveis:   "Móveis",
-  eletro:   "Eletrodomésticos",
-  cozinha:  "Cozinha",
-  decoracao:"Decoração",
-  outros:   "Outros"
-};
-/* Adicione, edite ou remova itens aqui.
-   category: uma das chaves de CATEGORIES acima (adicione novas categorias nos objetos ICONS e CATEGORIES se quiser).
-   type: "venda" ou "doacao".
-   photos: lista de fotos do item, ex: photos: ["fotos/sofa-1.jpg", "fotos/sofa-2.jpg"]
-   Coloque só uma foto na lista se tiver apenas uma. Deixe photos: []
-   (lista vazia) pra usar o ícone da categoria quando não tiver foto nenhuma.
-   Com mais de uma foto, o card mostra um carrossel (setas, bolinhas e arraste no celular). */
-const ITEMS = [
-  { name:"Sofá 3 lugares", category:"moveis",   type:"venda",  price:"R$ 1.450,50", desc:"Bom estado, tecido cinza.", photos:[] },
-  { name:"Liquidificador", category:"eletro",   type:"venda",  price:"R$ 90",  desc:"Usado poucas vezes.", photos:[] },
-  { name:"Estante de livros", category:"moveis", type:"doacao", price:"", desc:"Madeira maciça, 5 prateleiras.", photos:[] },
-  { name:"Jogo de panelas", category:"cozinha",  type:"venda",  price:"R$ 120", desc:"Conjunto com 4 peças.", photos:[] },
-  { name:"Quadros decorativos", category:"decoracao", type:"doacao", price:"", desc:"Kit com 3 quadros.", photos:[] },
-  { name:"Caixa de ferramentas", category:"outros", type:"venda", price:"R$ 60", desc:"Completa, com maleta.", photos:[] },
-];
-/* ================================ */
 let activeType = "todos";
 let activeCat = "todos";
 let searchTerm = "";
@@ -435,14 +411,12 @@ function getFiltered(){
     return matchesType && matchesCat && matchesSearch;
   });
 }
-
 /* Monta o bloco de foto (ou carrossel, se houver mais de uma) de um item */
 function buildPhotoBlock(item){
   const photos = item.photos || [];
   const wrap = document.createElement('div');
   wrap.className = 'photo';
   let idx = 0;
-
   function paint(){
     wrap.innerHTML = '';
     if(photos.length === 0){
@@ -453,20 +427,17 @@ function buildPhotoBlock(item){
     img.src = photos[idx];
     img.alt = item.name;
     wrap.appendChild(img);
-
     if(photos.length > 1){
       const prev = document.createElement('button');
       prev.type = 'button';
       prev.className = 'photo-nav prev';
       prev.innerHTML = '‹';
       prev.onclick = (e)=>{ e.stopPropagation(); idx = (idx - 1 + photos.length) % photos.length; paint(); };
-
       const next = document.createElement('button');
       next.type = 'button';
       next.className = 'photo-nav next';
       next.innerHTML = '›';
       next.onclick = (e)=>{ e.stopPropagation(); idx = (idx + 1) % photos.length; paint(); };
-
       const dots = document.createElement('div');
       dots.className = 'photo-dots';
       photos.forEach((_, i)=>{
@@ -474,13 +445,11 @@ function buildPhotoBlock(item){
         dot.className = 'dot' + (i === idx ? ' active' : '');
         dots.appendChild(dot);
       });
-
       wrap.appendChild(prev);
       wrap.appendChild(next);
       wrap.appendChild(dots);
     }
   }
-
   let touchStartX = null;
   wrap.addEventListener('touchstart', (e)=>{ touchStartX = e.touches[0].clientX; }, {passive:true});
   wrap.addEventListener('touchend', (e)=>{
@@ -492,11 +461,16 @@ function buildPhotoBlock(item){
     }
     touchStartX = null;
   }, {passive:true});
-
   paint();
   return wrap;
 }
-
+/* Monta o HTML da descrição: lista com marcadores se for array, texto simples se for string */
+function buildDescHTML(desc){
+  if(Array.isArray(desc)){
+    return `<ul>${desc.map(d => `<li>${d}</li>`).join('')}</ul>`;
+  }
+  return desc || '';
+}
 function render(){
   const filtered = getFiltered();
   const grid = document.getElementById('grid');
@@ -528,7 +502,7 @@ function render(){
       <div class="photo-slot"></div>
       <h3>${item.name}</h3>
       <div class="cat">${CATEGORIES[item.category] || item.category}</div>
-      <div class="desc">${item.desc || ''}</div>
+      <div class="desc">${buildDescHTML(item.desc)}</div>
       <div class="price ${item.type}">${item.type === 'venda' ? (item.price || 'A combinar') : 'Grátis'}</div>
       <a class="contact-btn" href="${waLink}" target="_blank" rel="noopener">Falar no WhatsApp</a>
     `;
