@@ -1,6 +1,6 @@
 /* ======= CONFIGURE AQUI ======= */
 const WHATSAPP_NUMBER = "5531991924908"; // troque pelo seu número, formato 55DDDNUMERO
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 12;
 
 const ICONS = {
   moveis: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="8" y="26" width="48" height="18" rx="2"/><path d="M10 44v8M54 44v8"/><path d="M8 26v-6a6 6 0 0 1 6-6h36a6 6 0 0 1 6 6v6"/></svg>`,
@@ -33,8 +33,8 @@ const CATEGORIES = {
    Com mais de uma foto, o card mostra um carrossel (setas, bolinhas e arraste no celular). */
 const ITEMS = [
   {
-    ativo: true,
     name: "Jogos de pc",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 5,00 cada",
@@ -50,8 +50,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Chuveiro Lorenzetti Acqua duo flex 127v + resistência extra",
+    ativo: true,
     category: "eletro",
     type: "venda",
     price: "R$ 450,00",
@@ -65,8 +65,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Duas Mesinhas de cabeceira",
+    ativo: true,
     category: "moveis",
     type: "venda",
     price: "R$ 50,00",
@@ -80,8 +80,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Monitor AOC LCD",
+    ativo: true,
     category: "eletro",
     type: "venda",
     price: "R$ 100,00",
@@ -98,8 +98,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Poltronas Estofadas Azul",
+    ativo: true,
     category: "moveis",
     type: "venda",
     price: "R$ 200,00",
@@ -120,8 +120,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Ukulele",
+    ativo: true,
     category: "outros",
     type: "venda",
     price: "R$ 200,00",
@@ -141,8 +141,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Violão Gianini",
+    ativo: true,
     category: "outros",
     type: "venda",
     price: "R$ 200,00",
@@ -162,8 +162,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Livros",
+    ativo: true,
     category: "outros",
     type: "venda",
     price: "R$ 5,00 cada",
@@ -199,8 +199,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Quadrinhos",
+    ativo: true,
     category: "outros",
     type: "venda",
     price: "Variados",
@@ -222,8 +222,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "A Tale of Pirates",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 450,00",
@@ -237,8 +237,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Coloretto",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 20,00",
@@ -252,8 +252,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Bananagrama",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -266,8 +266,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Futuropia",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -280,8 +280,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Lobisomem por uma Noite - Monstros",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -294,8 +294,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Saboteur",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -307,8 +307,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "The Mind",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -320,8 +320,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Tiny Epic Dinosaur",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -334,8 +334,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "Vilage Green",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -349,8 +349,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "War Vikings",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -364,8 +364,8 @@ const ITEMS = [
     ]
   },
   {
-    ativo: true,
     name: "San Juan",
+    ativo: true,
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
@@ -379,8 +379,8 @@ const ITEMS = [
     ]
   },
   {
+    name: "Dedín",
     ativo: true,
-    name: "Dedin",
     category: "jogos",
     type: "venda",
     price: "R$ 50,00",
