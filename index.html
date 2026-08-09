@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tudo tem que sair — catálogo de mudança</title>
+<title>Tudo tem que sair — catálogo de itens</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -31,51 +31,66 @@
       var(--board);
     min-height:100vh;
   }
-
-  /* ---------- header ---------- */
   header{
-    padding:56px 24px 40px;
+    padding:44px 16px 28px;
     text-align:center;
   }
   .stamp{
     display:inline-block;
-    border:3px solid var(--paper);
-    color:var(--paper);
+    border:3px solid #fff8ea;
+    color:#fff8ea;
     font-family:'Special Elite', monospace;
-    font-size:clamp(28px, 5vw, 46px);
+    font-size:clamp(22px, 6vw, 46px);
     letter-spacing:2px;
-    padding:14px 28px;
+    padding:12px 22px;
     transform:rotate(-2deg);
     text-transform:uppercase;
     position:relative;
+    max-width:92vw;
+    text-shadow:0 1px 3px rgba(0,0,0,0.5);
   }
   .stamp::before, .stamp::after{
     content:"";
     position:absolute;
     width:8px;height:8px;
-    border:2px solid var(--paper);
+    border:2px solid #fff8ea;
     border-radius:50%;
     top:-5px;
   }
   .stamp::before{left:-5px;}
   .stamp::after{right:-5px;}
   header p{
-    margin-top:18px;
+    margin-top:16px;
     font-family:'Space Mono', monospace;
-    color:var(--paper);
-    opacity:0.85;
-    font-size:14px;
+    color:#fff8ea;
+    font-size:13px;
     letter-spacing:1px;
+    text-shadow:0 1px 2px rgba(0,0,0,0.45);
   }
-
-  /* ---------- filters ---------- */
+  .search-wrap{
+    max-width:520px;
+    margin:0 auto 24px;
+    padding:0 16px;
+  }
+  .search-wrap input{
+    width:100%;
+    font-family:'Space Mono', monospace;
+    font-size:14px;
+    padding:12px 14px;
+    border:1.5px dashed var(--ink-soft);
+    background:var(--paper);
+    color:var(--ink);
+    outline:none;
+  }
+  .search-wrap input::placeholder{color:var(--ink-soft); opacity:0.7;}
+  .search-wrap input:focus{border-style:solid; border-color:var(--ink);}
   .filters{
     max-width:920px;
     margin:0 auto 8px;
-    padding:0 24px;
+    padding:0 16px;
     display:flex;
     flex-wrap:wrap;
-    gap:10px;
+    gap:8px;
     justify-content:center;
   }
   .filter-btn{
@@ -86,7 +101,8 @@
     background:var(--paper);
     color:var(--ink);
     border:1px dashed var(--ink-soft);
-    padding:8px 14px;
+    padding:9px 13px;
+    min-height:38px;
     cursor:pointer;
     box-shadow:2px 2px 0 rgba(0,0,0,0.2);
     transition:transform 0.15s ease;
@@ -97,24 +113,28 @@
     color:var(--paper);
     border-color:var(--paper);
   }
-
   .divider{
     max-width:920px;
-    margin:24px auto;
+    margin:20px auto;
     border:none;
     border-top:2px dashed rgba(241,232,212,0.4);
   }
-
-  /* ---------- grid ---------- */
+  .count{
+    text-align:center;
+    font-family:'Space Mono', monospace;
+    font-size:14px;
+    color:var(--paper);
+    opacity:0.75;
+    margin-bottom:8px;
+  }
   #grid{
     max-width:1040px;
     margin:0 auto;
-    padding:20px 32px 80px;
+    padding:16px 20px 40px;
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
-    gap:46px 28px;
+    grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+    gap:44px 24px;
   }
-
   .tag{
     position:relative;
     background:var(--paper);
@@ -123,7 +143,6 @@
     transition:transform 0.2s ease;
   }
   .tag:hover{transform:translateY(-4px) rotate(0deg) !important;}
-
   .pin{
     position:absolute;
     top:-11px;
@@ -143,7 +162,6 @@
     background:var(--board);
     box-shadow:inset 0 0 0 1.5px rgba(0,0,0,0.3);
   }
-
   .type-stamp{
     position:absolute;
     top:12px; right:10px;
@@ -155,11 +173,12 @@
     border:2px solid;
     transform:rotate(6deg);
     border-radius:3px;
+    z-index:2;
   }
   .type-stamp.venda{color:var(--sale); border-color:var(--sale);}
   .type-stamp.doacao{color:var(--donate); border-color:var(--donate);}
-
   .photo{
+    position:relative;
     width:100%;
     aspect-ratio:4/3;
     background:repeating-linear-gradient(135deg, var(--paper-shadow), var(--paper-shadow) 8px, var(--paper) 8px, var(--paper) 16px);
@@ -169,14 +188,51 @@
     justify-content:center;
     margin-top:14px;
     overflow:hidden;
+    touch-action:pan-y;
   }
   .photo img{width:100%;height:100%;object-fit:cover;display:block;}
   .photo svg{width:46%;opacity:0.55;}
-
+  .photo-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:26px;height:26px;
+    border-radius:50%;
+    border:none;
+    background:rgba(43,36,28,0.55);
+    color:var(--paper);
+    font-size:16px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    padding:0;
+  }
+  .photo-nav:hover{background:rgba(43,36,28,0.8);}
+  .photo-nav.prev{left:6px;}
+  .photo-nav.next{right:6px;}
+  .photo-dots{
+    position:absolute;
+    bottom:6px;
+    left:0; right:0;
+    display:flex;
+    justify-content:center;
+    gap:5px;
+  }
+  .photo-dots .dot{
+    width:6px;height:6px;
+    border-radius:50%;
+    background:rgba(241,232,212,0.55);
+  }
+  .photo-dots .dot.active{
+    background:var(--paper);
+  }
   .tag h3{
     font-family:'Special Elite', monospace;
     font-size:16px;
     margin:14px 0 4px;
+    line-height:1.25;
   }
   .tag .cat{
     font-family:'Space Mono', monospace;
@@ -201,23 +257,24 @@
   }
   .price.doacao{color:var(--donate);}
   .price.venda{color:var(--sale);}
-
   .contact-btn{
-    display:block;
     text-align:center;
     text-decoration:none;
     font-family:'Space Mono', monospace;
-    font-size:12px;
+    font-size:13px;
     letter-spacing:0.5px;
     text-transform:uppercase;
     background:var(--ink);
     color:var(--paper);
-    padding:10px;
+    padding:12px;
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     border:none;
     cursor:pointer;
   }
   .contact-btn:hover{background:#000;}
-
   .empty{
     grid-column:1/-1;
     text-align:center;
@@ -226,40 +283,79 @@
     padding:60px 0;
     opacity:0.8;
   }
-
+  .pagination{
+    max-width:920px;
+    margin:0 auto 60px;
+    padding:0 16px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    align-items:center;
+  }
+  .page-btn{
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    background:var(--paper);
+    color:var(--ink);
+    border:1px dashed var(--ink-soft);
+    padding:8px 12px;
+    min-width:38px;
+    min-height:38px;
+    cursor:pointer;
+  }
+  .page-btn.active{
+    background:var(--ink);
+    color:var(--paper);
+    border-color:var(--paper);
+  }
+  .page-btn:disabled{
+    opacity:0.35;
+    cursor:default;
+  }
   footer{
     text-align:center;
     padding:20px;
     font-family:'Space Mono', monospace;
-    font-size:11px;
-    color:var(--paper);
-    opacity:0.6;
+    font-size:14px;
+    color:#fff8ea;
+    opacity:0.9;
+    text-shadow:0 1px 2px rgba(0,0,0,0.4);
   }
-
+  @media (max-width:600px){
+    #grid{
+      grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+      gap:34px 14px;
+      padding:12px 12px 32px;
+    }
+    .tag{padding:14px 12px 12px;}
+    .tag h3{font-size:14px;}
+    .filter-btn{font-size:11px; padding:8px 10px;}
+  }
   @media (prefers-reduced-motion: reduce){
     .tag, .filter-btn{transition:none;}
   }
 </style>
 </head>
 <body>
-
 <header>
   <div class="stamp">Tudo tem que sair</div>
-  <p>BRASIL &rarr; ITÁLIA · ITENS À VENDA E DOAÇÃO</p>
+  <p>ITENS À VENDA E DOAÇÃO</p>
 </header>
-
+<div class="search-wrap">
+  <input type="text" id="searchInput" placeholder="Buscar item (ex: roupa, mesa, panela)...">
+</div>
 <div class="filters" id="typeFilters"></div>
-<hr class="divider">
 <div class="filters" id="catFilters"></div>
-
+<hr class="divider">
+<div class="count" id="countLabel"></div>
 <div id="grid"></div>
-
+<div class="pagination" id="pagination"></div>
 <footer>catálogo pessoal · fale por WhatsApp em cada item</footer>
-
 <script>
 /* ======= CONFIGURE AQUI ======= */
-const WHATSAPP_NUMBER = "5500000000000"; // troque pelo seu número, formato 55DDDNUMERO
-
+const WHATSAPP_NUMBER = "5531991924908"; // troque pelo seu número, formato 55DDDNUMERO
+const ITEMS_PER_PAGE = 10;
 const ICONS = {
   moveis: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="8" y="26" width="48" height="18" rx="2"/><path d="M10 44v8M54 44v8"/><path d="M8 26v-6a6 6 0 0 1 6-6h36a6 6 0 0 1 6 6v6"/></svg>`,
   eletro: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="14" y="8" width="36" height="48" rx="3"/><circle cx="32" cy="34" r="10"/><path d="M20 16h6"/></svg>`,
@@ -267,31 +363,36 @@ const ICONS = {
   decoracao: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="10" y="10" width="44" height="34" rx="2"/><path d="M10 34l12-12 10 10 10-14 12 16"/><circle cx="20" cy="20" r="3"/></svg>`,
   outros: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><path d="M32 8l24 12v24L32 56 8 44V20z"/><path d="M8 20l24 12 24-12M32 32v24"/></svg>`
 };
-
 const CATEGORIES = {
   moveis:   "Móveis",
-  eletro:   "Eletrônicos",
+  eletro:   "Eletrodomésticos",
   cozinha:  "Cozinha",
   decoracao:"Decoração",
   outros:   "Outros"
 };
-
 /* Adicione, edite ou remova itens aqui.
-   photo: deixe "" para usar o ícone da categoria, ou coloque o caminho
-   de um arquivo de foto (ex: "fotos/sofa.jpg") na mesma pasta do site. */
+   category: uma das chaves de CATEGORIES acima (adicione novas categorias nos objetos ICONS e CATEGORIES se quiser).
+   type: "venda" ou "doacao".
+   photos: lista de fotos do item, ex: photos: ["fotos/sofa-1.jpg", "fotos/sofa-2.jpg"]
+   Coloque só uma foto na lista se tiver apenas uma. Deixe photos: []
+   (lista vazia) pra usar o ícone da categoria quando não tiver foto nenhuma.
+   Com mais de uma foto, o card mostra um carrossel (setas, bolinhas e arraste no celular). */
 const ITEMS = [
-  { name:"Sofá 3 lugares", category:"moveis",   type:"venda",  price:"R$ 450", desc:"Bom estado, tecido cinza.", photo:"" },
-  { name:"Liquidificador", category:"eletro",   type:"venda",  price:"R$ 90",  desc:"Usado poucas vezes.", photo:"" },
-  { name:"Estante de livros", category:"moveis", type:"doacao", price:"", desc:"Madeira maciça, 5 prateleiras.", photo:"" },
-  { name:"Jogo de panelas", category:"cozinha",  type:"venda",  price:"R$ 120", desc:"Conjunto com 4 peças.", photo:"" },
-  { name:"Quadros decorativos", category:"decoracao", type:"doacao", price:"", desc:"Kit com 3 quadros.", photo:"" },
-  { name:"Caixa de ferramentas", category:"outros", type:"venda", price:"R$ 60", desc:"Completa, com maleta.", photo:"" },
+  { name:"Sofá 3 lugares", category:"moveis",   type:"venda",  price:"R$ 1.450,50", desc:"Bom estado, tecido cinza.", photos:[] },
+  { name:"Liquidificador", category:"eletro",   type:"venda",  price:"R$ 90",  desc:"Usado poucas vezes.", photos:[] },
+  { name:"Estante de livros", category:"moveis", type:"doacao", price:"", desc:"Madeira maciça, 5 prateleiras.", photos:[] },
+  { name:"Jogo de panelas", category:"cozinha",  type:"venda",  price:"R$ 120", desc:"Conjunto com 4 peças.", photos:[] },
+  { name:"Quadros decorativos", category:"decoracao", type:"doacao", price:"", desc:"Kit com 3 quadros.", photos:[] },
+  { name:"Caixa de ferramentas", category:"outros", type:"venda", price:"R$ 60", desc:"Completa, com maleta.", photos:[] },
 ];
 /* ================================ */
-
 let activeType = "todos";
 let activeCat = "todos";
-
+let searchTerm = "";
+let currentPage = 1;
+function normalize(str){
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
 function buildFilters(){
   const typeWrap = document.getElementById('typeFilters');
   const typeOptions = [["todos","Todos"],["venda","Venda"],["doacao","Doação"]];
@@ -299,25 +400,20 @@ function buildFilters(){
     const b = document.createElement('button');
     b.className = 'filter-btn' + (val==='todos' ? ' active' : '');
     b.textContent = label;
-    b.dataset.val = val;
-    b.onclick = ()=>{ activeType = val; refreshActive(typeWrap,b); render(); };
+    b.onclick = ()=>{ activeType = val; currentPage=1; refreshActive(typeWrap,b); render(); };
     typeWrap.appendChild(b);
   });
-
   const catWrap = document.getElementById('catFilters');
   const allBtn = document.createElement('button');
   allBtn.className = 'filter-btn active';
   allBtn.textContent = 'Todas categorias';
-  allBtn.dataset.val = 'todos';
-  allBtn.onclick = ()=>{ activeCat='todos'; refreshActive(catWrap, allBtn); render(); };
+  allBtn.onclick = ()=>{ activeCat='todos'; currentPage=1; refreshActive(catWrap, allBtn); render(); };
   catWrap.appendChild(allBtn);
-
   Object.entries(CATEGORIES).forEach(([key,label])=>{
     const b = document.createElement('button');
     b.className = 'filter-btn';
     b.textContent = label;
-    b.dataset.val = key;
-    b.onclick = ()=>{ activeCat = key; refreshActive(catWrap,b); render(); };
+    b.onclick = ()=>{ activeCat = key; currentPage=1; refreshActive(catWrap,b); render(); };
     catWrap.appendChild(b);
   });
 }
@@ -325,46 +421,146 @@ function refreshActive(wrap, btn){
   [...wrap.children].forEach(c=>c.classList.remove('active'));
   btn.classList.add('active');
 }
+document.getElementById('searchInput').addEventListener('input', (e)=>{
+  searchTerm = normalize(e.target.value.trim());
+  currentPage = 1;
+  render();
+});
+function getFiltered(){
+  return ITEMS.filter(i=>{
+    const matchesType = activeType === 'todos' || i.type === activeType;
+    const matchesCat = activeCat === 'todos' || i.category === activeCat;
+    const haystack = normalize(i.name);
+    const matchesSearch = searchTerm === '' || haystack.includes(searchTerm);
+    return matchesType && matchesCat && matchesSearch;
+  });
+}
 
-function render(){
-  const grid = document.getElementById('grid');
-  grid.innerHTML = '';
-  const filtered = ITEMS.filter(i =>
-    (activeType === 'todos' || i.type === activeType) &&
-    (activeCat === 'todos' || i.category === activeCat)
-  );
+/* Monta o bloco de foto (ou carrossel, se houver mais de uma) de um item */
+function buildPhotoBlock(item){
+  const photos = item.photos || [];
+  const wrap = document.createElement('div');
+  wrap.className = 'photo';
+  let idx = 0;
 
-  if(filtered.length === 0){
-    grid.innerHTML = '<div class="empty">Nenhum item nessa combinação de filtros ainda.</div>';
-    return;
+  function paint(){
+    wrap.innerHTML = '';
+    if(photos.length === 0){
+      wrap.innerHTML = ICONS[item.category] || ICONS.outros;
+      return;
+    }
+    const img = document.createElement('img');
+    img.src = photos[idx];
+    img.alt = item.name;
+    wrap.appendChild(img);
+
+    if(photos.length > 1){
+      const prev = document.createElement('button');
+      prev.type = 'button';
+      prev.className = 'photo-nav prev';
+      prev.innerHTML = '‹';
+      prev.onclick = (e)=>{ e.stopPropagation(); idx = (idx - 1 + photos.length) % photos.length; paint(); };
+
+      const next = document.createElement('button');
+      next.type = 'button';
+      next.className = 'photo-nav next';
+      next.innerHTML = '›';
+      next.onclick = (e)=>{ e.stopPropagation(); idx = (idx + 1) % photos.length; paint(); };
+
+      const dots = document.createElement('div');
+      dots.className = 'photo-dots';
+      photos.forEach((_, i)=>{
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === idx ? ' active' : '');
+        dots.appendChild(dot);
+      });
+
+      wrap.appendChild(prev);
+      wrap.appendChild(next);
+      wrap.appendChild(dots);
+    }
   }
 
-  filtered.forEach((item, idx) => {
+  let touchStartX = null;
+  wrap.addEventListener('touchstart', (e)=>{ touchStartX = e.touches[0].clientX; }, {passive:true});
+  wrap.addEventListener('touchend', (e)=>{
+    if(touchStartX === null || photos.length < 2) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if(Math.abs(dx) > 40){
+      idx = dx > 0 ? (idx - 1 + photos.length) % photos.length : (idx + 1) % photos.length;
+      paint();
+    }
+    touchStartX = null;
+  }, {passive:true});
+
+  paint();
+  return wrap;
+}
+
+function render(){
+  const filtered = getFiltered();
+  const grid = document.getElementById('grid');
+  const countLabel = document.getElementById('countLabel');
+  grid.innerHTML = '';
+  countLabel.textContent = filtered.length === 0
+    ? ''
+    : `${filtered.length} ${filtered.length === 1 ? 'item encontrado' : 'itens encontrados'}`;
+  if(filtered.length === 0){
+    grid.innerHTML = '<div class="empty">Nenhum item encontrado com essa busca/filtro.</div>';
+    document.getElementById('pagination').innerHTML = '';
+    return;
+  }
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  if(currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
+  pageItems.forEach((item, idx) => {
     const rotation = (idx % 2 === 0 ? -1 : 1) * (1 + (idx % 3));
     const card = document.createElement('div');
     card.className = 'tag';
     card.style.transform = `rotate(${rotation}deg)`;
-
     const msg = encodeURIComponent(`Oi! Vi seu anúncio e tenho interesse em: ${item.name}`);
     const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
-
     card.innerHTML = `
       <div class="pin"></div>
       <div class="hole"></div>
       <div class="type-stamp ${item.type}">${item.type === 'venda' ? 'Venda' : 'Doação'}</div>
-      <div class="photo">
-        ${item.photo ? `<img src="${item.photo}" alt="${item.name}">` : ICONS[item.category] || ICONS.outros}
-      </div>
+      <div class="photo-slot"></div>
       <h3>${item.name}</h3>
       <div class="cat">${CATEGORIES[item.category] || item.category}</div>
       <div class="desc">${item.desc || ''}</div>
       <div class="price ${item.type}">${item.type === 'venda' ? (item.price || 'A combinar') : 'Grátis'}</div>
       <a class="contact-btn" href="${waLink}" target="_blank" rel="noopener">Falar no WhatsApp</a>
     `;
+    card.querySelector('.photo-slot').replaceWith(buildPhotoBlock(item));
     grid.appendChild(card);
   });
+  renderPagination(totalPages);
 }
-
+function renderPagination(totalPages){
+  const wrap = document.getElementById('pagination');
+  wrap.innerHTML = '';
+  if(totalPages <= 1) return;
+  const prev = document.createElement('button');
+  prev.className = 'page-btn';
+  prev.textContent = '‹';
+  prev.disabled = currentPage === 1;
+  prev.onclick = ()=>{ currentPage--; render(); window.scrollTo({top:0, behavior:'smooth'}); };
+  wrap.appendChild(prev);
+  for(let p=1; p<=totalPages; p++){
+    const b = document.createElement('button');
+    b.className = 'page-btn' + (p === currentPage ? ' active' : '');
+    b.textContent = p;
+    b.onclick = ()=>{ currentPage = p; render(); window.scrollTo({top:0, behavior:'smooth'}); };
+    wrap.appendChild(b);
+  }
+  const next = document.createElement('button');
+  next.className = 'page-btn';
+  next.textContent = '›';
+  next.disabled = currentPage === totalPages;
+  next.onclick = ()=>{ currentPage++; render(); window.scrollTo({top:0, behavior:'smooth'}); };
+  wrap.appendChild(next);
+}
 buildFilters();
 render();
 </script>
