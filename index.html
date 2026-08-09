@@ -134,15 +134,16 @@
     display:grid;
     grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
     gap:44px 24px;
+    align-items:stretch;
   }
   .tag{
     position:relative;
     background:var(--paper);
     box-shadow:3px 4px 0 rgba(0,0,0,0.25);
     padding:18px 16px 16px;
-    transition:transform 0.2s ease;
+    display:flex;
+    flex-direction:column;
   }
-  .tag:hover{transform:translateY(-4px) rotate(0deg) !important;}
   .pin{
     position:absolute;
     top:-11px;
@@ -180,7 +181,7 @@
   .photo{
     position:relative;
     width:100%;
-    aspect-ratio:4/3;
+    aspect-ratio:1/1;
     background:repeating-linear-gradient(135deg, var(--paper-shadow), var(--paper-shadow) 8px, var(--paper) 8px, var(--paper) 16px);
     border:1.5px dashed var(--ink-soft);
     display:flex;
@@ -190,7 +191,7 @@
     overflow:hidden;
     touch-action:pan-y;
   }
-  .photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;}
   .photo svg{width:46%;opacity:0.55;}
   .photo-nav{
     position:absolute;
@@ -208,6 +209,7 @@
     justify-content:center;
     cursor:pointer;
     padding:0;
+    z-index:3;
   }
   .photo-nav:hover{background:rgba(43,36,28,0.8);}
   .photo-nav.prev{left:6px;}
@@ -219,6 +221,7 @@
     display:flex;
     justify-content:center;
     gap:5px;
+    z-index:3;
   }
   .photo-dots .dot{
     width:6px;height:6px;
@@ -242,12 +245,22 @@
     letter-spacing:1px;
     margin-bottom:8px;
   }
+  .desc-wrap{
+    flex:1 1 auto;
+    margin-bottom:12px;
+  }
   .tag .desc{
     font-size:13px;
     color:var(--ink-soft);
     line-height:1.4;
-    margin-bottom:12px;
     min-height:18px;
+  }
+  .tag .desc-text{
+    max-height:91px;
+    overflow:hidden;
+  }
+  .tag .desc-text.expanded{
+    max-height:none;
   }
   .tag .desc ul{
     margin:0;
@@ -255,6 +268,16 @@
   }
   .tag .desc li{
     margin-bottom:2px;
+  }
+  .desc-toggle{
+    background:none;
+    border:none;
+    padding:4px 0 0;
+    font-family:'Space Mono', monospace;
+    font-size:12px;
+    color:var(--ink);
+    text-decoration:underline;
+    cursor:pointer;
   }
   .price{
     font-family:'Space Mono', monospace;
@@ -329,6 +352,89 @@
     opacity:0.9;
     text-shadow:0 1px 2px rgba(0,0,0,0.4);
   }
+  .lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(20,16,10,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:1000;
+    padding:24px;
+    cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox-card{
+    position:relative;
+    max-width:min(640px, 90vw);
+    max-height:85vh;
+    background:var(--paper);
+    padding:10px;
+    box-shadow:0 10px 34px rgba(0,0,0,0.45);
+    cursor:default;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .lightbox img{
+    display:block;
+    max-width:100%;
+    max-height:calc(85vh - 20px);
+    object-fit:contain;
+  }
+  .lightbox-close{
+    position:absolute;
+    top:-14px;
+    right:-14px;
+    width:32px;height:32px;
+    border-radius:50%;
+    border:none;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:16px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:2;
+  }
+  .lightbox-nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:36px;height:36px;
+    border-radius:50%;
+    border:none;
+    background:rgba(43,36,28,0.6);
+    color:var(--paper);
+    font-size:20px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    padding:0;
+    z-index:2;
+  }
+  .lightbox-nav:hover{background:rgba(43,36,28,0.85);}
+  .lightbox-nav.prev{left:8px;}
+  .lightbox-nav.next{right:8px;}
+  .lightbox-dots{
+    position:absolute;
+    bottom:6px;
+    left:0; right:0;
+    display:flex;
+    justify-content:center;
+    gap:5px;
+  }
+  .lightbox-dots .dot{
+    width:6px;height:6px;
+    border-radius:50%;
+    background:rgba(43,36,28,0.3);
+  }
+  .lightbox-dots .dot.active{
+    background:var(--ink);
+  }
   @media (max-width:600px){
     #grid{
       grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
@@ -340,7 +446,7 @@
     .filter-btn{font-size:11px; padding:8px 10px;}
   }
   @media (prefers-reduced-motion: reduce){
-    .tag, .filter-btn{transition:none;}
+    .filter-btn{transition:none;}
   }
 </style>
 </head>
@@ -360,15 +466,24 @@
 <div class="pagination" id="pagination"></div>
 <footer>catálogo pessoal · chame no WhatsApp</footer>
 
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-card" id="lightboxCard">
+    <button type="button" class="lightbox-close" id="lightboxClose">✕</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+</div>
+
 <script src="dados.js"></script>
 <script>
 let activeType = "todos";
 let activeCat = "todos";
 let searchTerm = "";
 let currentPage = 1;
+
 function normalize(str){
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
+
 function buildFilters(){
   const typeWrap = document.getElementById('typeFilters');
   const typeOptions = [["todos","Todos"],["venda","Venda"],["doacao","Doação"]];
@@ -393,17 +508,21 @@ function buildFilters(){
     catWrap.appendChild(b);
   });
 }
+
 function refreshActive(wrap, btn){
   [...wrap.children].forEach(c=>c.classList.remove('active'));
   btn.classList.add('active');
 }
+
 document.getElementById('searchInput').addEventListener('input', (e)=>{
   searchTerm = normalize(e.target.value.trim());
   currentPage = 1;
   render();
 });
+
 function getFiltered(){
   return ITEMS.filter(i=>{
+    if(i.ativo === false) return false;
     const matchesType = activeType === 'todos' || i.type === activeType;
     const matchesCat = activeCat === 'todos' || i.category === activeCat;
     const haystack = normalize(i.name);
@@ -411,6 +530,65 @@ function getFiltered(){
     return matchesType && matchesCat && matchesSearch;
   });
 }
+
+/* Lightbox: abre a foto clicada em tamanho maior, permitindo navegar entre as fotos do mesmo item */
+const lightbox = document.getElementById('lightbox');
+const lightboxCard = document.getElementById('lightboxCard');
+const lightboxImg = document.getElementById('lightboxImg');
+let lightboxPhotos = [];
+let lightboxIdx = 0;
+let lightboxAlt = '';
+
+function paintLightbox(){
+  lightboxImg.src = lightboxPhotos[lightboxIdx];
+  lightboxImg.alt = lightboxAlt;
+  lightboxCard.querySelectorAll('.lightbox-nav, .lightbox-dots').forEach(el => el.remove());
+  if(lightboxPhotos.length > 1){
+    const prev = document.createElement('button');
+    prev.type = 'button';
+    prev.className = 'lightbox-nav prev';
+    prev.innerHTML = '‹';
+    prev.onclick = (e)=>{ e.stopPropagation(); lightboxIdx = (lightboxIdx - 1 + lightboxPhotos.length) % lightboxPhotos.length; paintLightbox(); };
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'lightbox-nav next';
+    next.innerHTML = '›';
+    next.onclick = (e)=>{ e.stopPropagation(); lightboxIdx = (lightboxIdx + 1) % lightboxPhotos.length; paintLightbox(); };
+    const dots = document.createElement('div');
+    dots.className = 'lightbox-dots';
+    lightboxPhotos.forEach((_, i)=>{
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (i === lightboxIdx ? ' active' : '');
+      dots.appendChild(dot);
+    });
+    lightboxCard.appendChild(prev);
+    lightboxCard.appendChild(next);
+    lightboxCard.appendChild(dots);
+  }
+}
+
+function openLightbox(photos, startIdx, alt){
+  lightboxPhotos = photos;
+  lightboxIdx = startIdx;
+  lightboxAlt = alt;
+  paintLightbox();
+  lightbox.classList.add('open');
+}
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightboxImg.src = '';
+}
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e)=>{
+  if(e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e)=>{
+  if(!lightbox.classList.contains('open')) return;
+  if(e.key === 'Escape') closeLightbox();
+  if(e.key === 'ArrowLeft' && lightboxPhotos.length > 1){ lightboxIdx = (lightboxIdx - 1 + lightboxPhotos.length) % lightboxPhotos.length; paintLightbox(); }
+  if(e.key === 'ArrowRight' && lightboxPhotos.length > 1){ lightboxIdx = (lightboxIdx + 1) % lightboxPhotos.length; paintLightbox(); }
+});
+
 /* Monta o bloco de foto (ou carrossel, se houver mais de uma) de um item */
 function buildPhotoBlock(item){
   const photos = item.photos || [];
@@ -426,6 +604,7 @@ function buildPhotoBlock(item){
     const img = document.createElement('img');
     img.src = photos[idx];
     img.alt = item.name;
+    img.onclick = (e)=>{ e.stopPropagation(); openLightbox(photos, idx, item.name); };
     wrap.appendChild(img);
     if(photos.length > 1){
       const prev = document.createElement('button');
@@ -464,6 +643,7 @@ function buildPhotoBlock(item){
   paint();
   return wrap;
 }
+
 /* Monta o HTML da descrição: lista com marcadores se for array, texto simples se for string */
 function buildDescHTML(desc){
   if(Array.isArray(desc)){
@@ -471,6 +651,47 @@ function buildDescHTML(desc){
   }
   return desc || '';
 }
+
+/* Monta o bloco de descrição com "ver mais / ver menos" quando o texto passa de ~5 linhas */
+function buildDescBlock(item){
+  const wrap = document.createElement('div');
+  wrap.className = 'desc-wrap';
+
+  const descDiv = document.createElement('div');
+  descDiv.className = 'desc';
+
+  const textDiv = document.createElement('div');
+  textDiv.className = 'desc-text';
+  textDiv.innerHTML = buildDescHTML(item.desc);
+  descDiv.appendChild(textDiv);
+  wrap.appendChild(descDiv);
+
+  if(item.desc){
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'desc-toggle';
+    toggle.textContent = 'ver mais';
+    toggle.style.display = 'none';
+    wrap.appendChild(toggle);
+
+    let expanded = false;
+    toggle.onclick = ()=>{
+      expanded = !expanded;
+      textDiv.classList.toggle('expanded', expanded);
+      toggle.textContent = expanded ? 'ver menos' : 'ver mais';
+    };
+
+    // Só mostra o botão se o texto realmente ultrapassar o limite de linhas
+    requestAnimationFrame(()=>{
+      if(textDiv.scrollHeight > textDiv.clientHeight + 1){
+        toggle.style.display = 'inline-block';
+      }
+    });
+  }
+
+  return wrap;
+}
+
 function render(){
   const filtered = getFiltered();
   const grid = document.getElementById('grid');
@@ -488,11 +709,9 @@ function render(){
   if(currentPage > totalPages) currentPage = totalPages;
   const start = (currentPage - 1) * ITEMS_PER_PAGE;
   const pageItems = filtered.slice(start, start + ITEMS_PER_PAGE);
-  pageItems.forEach((item, idx) => {
-    const rotation = (idx % 2 === 0 ? -1 : 1) * (1 + (idx % 3));
+  pageItems.forEach((item) => {
     const card = document.createElement('div');
     card.className = 'tag';
-    card.style.transform = `rotate(${rotation}deg)`;
     const msg = encodeURIComponent(`Oi! Vi seu anúncio e tenho interesse em: ${item.name}`);
     const waLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
     card.innerHTML = `
@@ -502,15 +721,17 @@ function render(){
       <div class="photo-slot"></div>
       <h3>${item.name}</h3>
       <div class="cat">${CATEGORIES[item.category] || item.category}</div>
-      <div class="desc">${buildDescHTML(item.desc)}</div>
+      <div class="desc-slot"></div>
       <div class="price ${item.type}">${item.type === 'venda' ? (item.price || 'A combinar') : 'Grátis'}</div>
       <a class="contact-btn" href="${waLink}" target="_blank" rel="noopener">Falar no WhatsApp</a>
     `;
     card.querySelector('.photo-slot').replaceWith(buildPhotoBlock(item));
+    card.querySelector('.desc-slot').replaceWith(buildDescBlock(item));
     grid.appendChild(card);
   });
   renderPagination(totalPages);
 }
+
 function renderPagination(totalPages){
   const wrap = document.getElementById('pagination');
   wrap.innerHTML = '';
@@ -535,6 +756,7 @@ function renderPagination(totalPages){
   next.onclick = ()=>{ currentPage++; render(); window.scrollTo({top:0, behavior:'smooth'}); };
   wrap.appendChild(next);
 }
+
 buildFilters();
 render();
 </script>

@@ -21,6 +21,8 @@ const CATEGORIES = {
 };
 
 /* Adicione, edite ou remova itens aqui.
+   ativo: true para o item aparecer na página, false para ficar escondido
+   (útil pra já cadastrar o item com antecedência e só publicar quando quiser).
    category: uma das chaves de CATEGORIES acima (adicione novas categorias nos objetos ICONS e CATEGORIES se quiser).
    type: "venda" ou "doacao".
    desc: pode ser um texto simples ("Usado poucas vezes.") ou uma lista de itens
@@ -31,6 +33,7 @@ const CATEGORIES = {
    Com mais de uma foto, o card mostra um carrossel (setas, bolinhas e arraste no celular). */
 const ITEMS = [
   {
+    ativo: true,
     name: "Jogos de pc",
     category: "jogos",
     type: "venda",
@@ -43,10 +46,11 @@ const ITEMS = [
         "Lego Indiana Jones"
     ],
     photos: [
-        "fotos/jogos PC.jpeg"
+        "fotos/Jogos PC.jpeg"
     ]
   },
   {
+    ativo: true,
     name: "Chuveiro Lorenzetti Acqua duo flex 127v + resistência extra",
     category: "eletro",
     type: "venda",
@@ -61,6 +65,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "Duas Mesinhas de cabeceira",
     category: "moveis",
     type: "venda",
@@ -75,6 +80,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "Monitor AOC LCD",
     category: "eletro",
     type: "venda",
@@ -92,6 +98,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "Poltronas Estofadas Azul",
     category: "moveis",
     type: "venda",
@@ -113,6 +120,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "Ukulele",
     category: "outros",
     type: "venda",
@@ -133,6 +141,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "Violão Gianini",
     category: "outros",
     type: "venda",
@@ -153,6 +162,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "Livros",
     category: "outros",
     type: "venda",
@@ -189,6 +199,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "Quadrinhos",
     category: "outros",
     type: "venda",
@@ -211,6 +222,7 @@ const ITEMS = [
     ]
   },
   {
+    ativo: true,
     name: "A Tale of Pirates",
     category: "jogos",
     type: "venda",
@@ -221,10 +233,11 @@ const ITEMS = [
         "A partir da missão 4 lacradas"
     ],
     photos: [
-        "fotos//Boardgame/A Tale of Pirates.jpeg"
+        "fotos/Boardgame/A Tale of Pirates.jpeg"
     ]
   },
   {
+    ativo: true,
     name: "Coloretto",
     category: "jogos",
     type: "venda",
@@ -235,10 +248,11 @@ const ITEMS = [
         "Jogado umas 3 vezes"
     ],
     photos: [
-        "fotos//Boardgame/coloretto.jpg"
+        "fotos/Boardgame/coloretto.jpg"
     ]
   },
   {
+    ativo: true,
     name: "Bananagrama",
     category: "jogos",
     type: "venda",
@@ -248,10 +262,11 @@ const ITEMS = [
         "Jogado 1 vez"
     ],
     photos: [
-        "fotos//Boardgame/Bananagrama.jpeg"
+        "fotos/Boardgame/Bananagrama.jpeg"
     ]
   },
   {
+    ativo: true,
     name: "Futuropia",
     category: "jogos",
     type: "venda",
@@ -261,10 +276,11 @@ const ITEMS = [
         "Jogado 1 vez"
     ],
     photos: [
-        "fotos//Boardgame/futuropia.jpg"
+        "fotos/Boardgame/futuropia.jpg"
     ]
   },
   {
+    ativo: true,
     name: "Lobisomem por uma Noite - Monstros",
     category: "jogos",
     type: "venda",
@@ -274,10 +290,11 @@ const ITEMS = [
         "Jogado 2 vez"
     ],
     photos: [
-        "fotos//Boardgame/Lobisomem por uma noite montros.jpeg"
+        "fotos/Boardgame/Lobisomem por uma noite montros.jpeg"
     ]
   },
   {
+    ativo: true,
     name: "Saboteur",
     category: "jogos",
     type: "venda",
@@ -286,10 +303,11 @@ const ITEMS = [
         "Pra jogar de galera, com mecânica de dedução social. O jogo é rápido e divertido, ideal para grupos grandes.",
     ],
     photos: [
-        "fotos//Boardgame/Saboteur.jpeg"
+        "fotos/Boardgame/Saboteur.jpeg"
     ]
   },
   {
+    ativo: true,
     name: "The Mind",
     category: "jogos",
     type: "venda",
@@ -298,10 +316,11 @@ const ITEMS = [
         "Jogo de fazer sequencia númerica mas sem se comunicar. O jogo é rápido e divertido",
     ],
     photos: [
-        "fotos//Boardgame/the mind.jpg"
+        "fotos/Boardgame/the mind.jpg"
     ]
   },
   {
+    ativo: true,
     name: "Tiny Epic Dinosaur",
     category: "jogos",
     type: "venda",
@@ -311,10 +330,11 @@ const ITEMS = [
         "Jogado 3 vezes"
     ],
     photos: [
-        "fotos//Boardgame/tiny epic dinosaurs.jpeg"
+        "fotos/Boardgame/tiny epic dinosaurs.jpeg"
     ]
   },
   {
+    ativo: true,
     name: "Vilage Green",
     category: "jogos",
     type: "venda",
@@ -325,10 +345,11 @@ const ITEMS = [
         "Jogado 2 vezes"
     ],
     photos: [
-        "fotos//Boardgame/village green.jpg"
+        "fotos/Boardgame/village green.jpg"
     ]
   },
   {
+    ativo: true,
     name: "War Vikings",
     category: "jogos",
     type: "venda",
@@ -339,10 +360,11 @@ const ITEMS = [
         "Jogado 2 vezes"
     ],
     photos: [
-        "fotos//Boardgame/war vikings.jpg"
+        "fotos/Boardgame/war vikings.jpg"
     ]
   },
   {
+    ativo: true,
     name: "San Juan",
     category: "jogos",
     type: "venda",
@@ -353,10 +375,11 @@ const ITEMS = [
         "Jogado 3 vezes"
     ],
     photos: [
-        "fotos//Boardgame/San Juan.jpeg"
+        "fotos/Boardgame/San Juan.jpeg"
     ]
   },
   {
+    ativo: true,
     name: "Dedin",
     category: "jogos",
     type: "venda",
@@ -367,7 +390,7 @@ const ITEMS = [
         "Jogado 2 vezes"
     ],
     photos: [
-        "fotos//Boardgame/dedin.jpg"
+        "fotos/Boardgame/dedin.jpg"
     ]
   },
 ];
