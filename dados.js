@@ -321,7 +321,7 @@ const ITEMS = [
   {
     name: "Capacete EBF Spark Spider 58",
     ativo: true,
-    category: "cozinha",
+    category: "outros",
     type: "venda",
     price: "R$ 180,00",
     desc: [
