@@ -33,23 +33,6 @@ const CATEGORIES = {
    Com mais de uma foto, o card mostra um carrossel (setas, bolinhas e arraste no celular). */
 const ITEMS = [
   {
-    name: "Jogos de pc",
-    ativo: true,
-    category: "jogos",
-    type: "venda",
-    price: "R$ 5,00 cada",
-    desc: [
-        "FarCry",
-        "Senhor dos Anéis - O Retorno do Rei",
-        "Age of Mythology",
-        "Byzantine",
-        "Lego Indiana Jones"
-    ],
-    photos: [
-        "fotos/Jogos PC.jpeg"
-    ]
-  },
-  {
     name: "Chuveiro Lorenzetti Acqua duo flex 127v + resistência extra",
     ativo: true,
     category: "eletro",
@@ -69,7 +52,7 @@ const ITEMS = [
     ativo: true,
     category: "moveis",
     type: "venda",
-    price: "R$ 50,00",
+    price: "R$ 100,00",
     desc: [
         "Algumas marcas de uso (descascado)",
         "Medidas: 56cm de altura, 45cm de largura e 45cm de profundidade."
@@ -80,94 +63,13 @@ const ITEMS = [
     ]
   },
   {
-    name: "Monitor AOC LCD",
-    ativo: true,
-    category: "eletro",
-    type: "venda",
-    price: "R$ 100,00",
-    desc: [
-        "50/60Hz",
-        "19,5 polegadas",
-        "Resolução: ",
-        "Entrada VGA e HDMI"
-    ],
-    photos: [
-        "fotos/Monitor.jpeg",
-        "fotos/Monitor2.jpeg",
-        "fotos/Monitor3.jpeg"
-    ]
-  },
-  {
-    name: "Poltronas Estofadas Azul",
-    ativo: true,
-    category: "moveis",
-    type: "venda",
-    price: "R$ 200,00",
-    desc: [
-        "Poltrona de 1 lugar",
-        "Namoradeira de 2 lugares",
-        "Pé palito em madeira",
-        "Tecido suede azul", 
-        "Estrutura de madeira",
-        "Medidas da poltrona: 78cm x 65cm x 80cm",
-        "Medidas da namoradeira: 130cm x 65cm x 80cm",
-        "Assento da namoradeira deformado",
-        "Tecido da poltrona levemente desbotado"
-    ],
-    photos: [
-        "fotos/Namoradeira.jpeg",
-        "fotos/Poltrona.jpeg"
-    ]
-  },
-  {
-    name: "Ukulele",
-    ativo: true,
-    category: "outros",
-    type: "venda",
-    price: "R$ 200,00",
-    desc: [
-        "Usado poucas vezes",
-        "Funcionando perfeitamente",
-        "Marca: SHELBY",
-        "Modelo SU23M",
-        "Cordas: Nylon",
-        "Dimensões: 23",
-        "Concerto: acústico (23)"
-    ],
-    photos: [
-        "fotos/Ukulele 1.jpeg",
-        "fotos/Ukulele.jpeg",
-        "fotos/Ukulele 2.jpeg"
-    ]
-  },
-  {
-    name: "Violão Gianini",
-    ativo: true,
-    category: "outros",
-    type: "venda",
-    price: "R$ 200,00",
-    desc: [
-        "Usado poucas vezes",
-        "Marca: GIANINI",
-        "Série estudo",
-        "Modelo: GCE-14",
-        "Cordas: Nylon",
-        "Cavalete descolado",
-        "Acomapanha capa protetora"
-    ],
-    photos: [
-        "fotos/Violão 1.jpeg",
-        "fotos/Violão 2.jpeg",
-        "fotos/Violão 3.jpeg"
-    ]
-  },
-  {
     name: "Livros",
     ativo: true,
     category: "outros",
     type: "venda",
     price: "R$ 5,00 cada",
     desc: [
+        "25 livros variados - R$ 10,00 cada - levando todos faço por 200,00",
         "A Cabana - William P. Young",
         "A Travessia - William P. Young",
         "A Vingança - Christopher Reich",
@@ -175,8 +77,8 @@ const ITEMS = [
         "Harry Potter e a Pedra Filosofal - J.K. Rowling",
         "Harry Potter e a Câmara Secreta - J.K. Rowling",
         "A Batalha do Apocalipse - Eduardo Spohr",
-        "Filhos do Edenm - Anjos da Morte - Eduardo Spohr",
-        "Filhops do Eden - Herdeiros de Atlântida - Eduardo Spohr",
+        "Filhos do Eden - Anjos da Morte - Eduardo Spohr",
+        "Filhos do Eden - Herdeiros de Atlântida - Eduardo Spohr",
         "Ruas Estranhas - George R.R. Martin",
         "A Lei do Triunfo - Napoleon Hill",
         "Azincourt - Bernard Cornwell",
@@ -193,6 +95,7 @@ const ITEMS = [
         "Tuareg - Alberto Vázquez-Figueroa",
         "O Homem mais Rico da Babilônia - George S. Clason",
         "Todos se comunicam, poucos se conectam - John C. Maxwell",
+        "Mitologia Nórdica - Neil Gaiman"
     ],
     photos: [
         "fotos/Livros.jpeg"
@@ -219,6 +122,519 @@ const ITEMS = [
     ],
     photos: [
         "fotos/Quadrinhos.jpeg"
+    ]
+  },
+  {
+    name: "Mesa de Centro",
+    ativo: true,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 250,00",
+    desc: [
+        "Mesa de madeira",
+        "Medidas: 60cm x 90cm x 41cm.",
+        "Algumas marcas de uso"
+    ],
+    photos: [
+        "fotos/Mesa de Centro (1).jpeg",
+        "fotos/Mesa de Centro (2).jpeg",
+        "fotos/Mesa de Centro (3).jpeg"
+    ]
+  },
+  {
+    name: "Adega Climatizada",
+    ativo: false,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 400,00",
+    desc: [
+        "Adega Climatizada Electrolux 8 garrafas",
+        "Medidas: 51cm x 25,5cm x 41,5cm."
+    ],
+    photos: [
+        "fotos/Adega Climatizada (1).jpeg",
+        "fotos/Adega Climatizada (5).jpeg",
+        "fotos/Adega Climatizada (6).jpeg",
+        "fotos/Adega Climatizada (7).jpeg",
+        "fotos/Adega Climatizada (4).jpeg",
+        "fotos/Adega Climatizada (3).jpeg",
+        "fotos/Adega Climatizada (2).jpeg"
+    ]
+  },
+  {
+    name: "Rack de Madeira",
+    ativo: false,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 300,00",
+    desc: [
+        "Medidas: 180cm x 47cm x 56cm.",
+        "Possui 4 gavetas",
+        "Algumas marcas de uso"
+    ],
+    photos: [
+        "fotos/Rack 4 gavetas (1).jpeg",
+        "fotos/Rack 4 gavetas (2).jpeg"
+    ]
+  },
+  {
+    name: "Quadro a Criação de Adão",
+    ativo: true,
+    category: "decoracao",
+    type: "venda",
+    price: "R$ 80,00",
+    desc: [
+        "Medidas: 47,5cm x 33,5cm",
+        "Quebra cabeça de 1000 peças mini do quadro de Michelangelo da capela cistina",
+        "Moldura de madeira",
+        "Vidro frontal fosco"
+    ],
+    photos: [
+        "fotos/Quadro Criação do Homem (2).jpeg",
+        "fotos/Quadro Criação do Homem (1).jpeg"
+    ]
+  },
+
+  {
+    name: "Quadro a Dolomitas",
+    ativo: true,
+    category: "decoracao",
+    type: "venda",
+    price: "R$ 100,00",
+    desc: [
+        "Medidas: 126,5cm x 82cm",
+        "Quebra cabeça de 3000 peças da montanha Dolomita",
+        "Moldura de madeira",
+        "Vidro frontal fosco"
+    ],
+    photos: [
+        "fotos/Quadro Dolomita (2).jpeg",
+        "fotos/Quadro Dolomita (1).jpeg"
+    ]
+  },
+  {
+    name: "Armário de Quina",
+    ativo: true,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 250,00",
+    desc: [
+        "Armário de quina de madeira",
+        "Medidas: 72,5cm x 38cm x 52,5cm e 160cm altura",
+    ],
+    photos: [
+        "fotos/Estante de Quina (1).jpeg",
+        "fotos/Estante de Quina (2).jpeg"
+    ]
+  },
+  {
+    name: "Mesa de 6 Lugares",
+    ativo: false,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 2500,00",
+    desc: [
+        "Medidas: 180cm x 90cm x 80cm",
+        "Mesa de Laca Preto",
+        "6 lugares",
+        "quinas arredondadas",
+        "Pé em X de madeira maciça",
+        "Tecido das cadeiras com marcas de uso"
+    ],
+    photos: [
+        "fotos/Mesa (1).jpeg",
+        "fotos/Mesa (3).jpeg",
+        "fotos/Mesa (4).jpeg",
+        "fotos/Mesa (2).jpeg",
+        "fotos/Mesa (5).jpeg",
+        "fotos/Mesa (6).jpeg",
+        "fotos/Mesa (7).jpeg"
+    ]
+  },
+  {
+    name: "Escova Rotativa",
+    ativo: true,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 100,00",
+    desc: [
+        "Secador de cabelo giratório",
+        "Marca: MONDIAL",
+        "Modelo: ER-11-AR",
+        "Potência: 1000W",
+        "Voltagem: 127V"
+    ],
+    photos: [
+        "fotos/Secador Giratório (1).jpeg",
+        "fotos/Secador Giratório (2).jpeg",
+        "fotos/Secador Giratório (3).jpeg"
+    ]
+  },
+  {
+    name: "Caçarola Master Chef",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 1400,00",
+    desc: [
+        "Panela caçarola ferro fundido 24cm Masterchef  esmaltado vermelha",
+        "NUNCA USADO"
+    ],
+    photos: [
+        "fotos/Caçarola (2).jpeg",
+        "fotos/Caçarola (1).jpeg"
+    ]
+  },
+  {
+    name: "Acessório de cozimento a vapor da linha Master Chef",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 400,00",
+    desc: [
+        "Acessório de cozimento a vapor da linha MasterChef",
+        "Material: Feito inteiramente em aço inoxidável de alta qualidade.",
+        "Compatibilidade: Possui encaixe sob medida para panelas de 20 cm e 24 cm.",
+        "Uso: Ideal para o cozimento saudável de legumes e outros alimentos, preservando nutrientes e sabores.",
+        "NUNCA USADO"
+    ],
+    photos: [
+        "fotos/Acessorio a vapor (1).jpeg",
+        "fotos/Acessorio a vapor (2).jpeg"
+    ]
+  },
+  {
+    name: "Panela Wok Cuisinox 28cm",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 400,00",
+    desc: [
+        "Panela Wok Cuisinox 28cm",
+        "USADO POUCAS VEZES"
+    ],
+    photos: [
+        "fotos/Wok (2).jpeg",
+        "fotos/Wok (1).jpeg"
+    ]
+  },
+  {
+    name: "Capacete EBF Spark Spider 58",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 180,00",
+    desc: [
+        "Tamanho 58",
+        "Muito novo, usado poucas vezes (comprei recente)",
+        "Infelizmente acabou arranhando nas laterais atrás por ter ficado no baú"
+    ],
+    photos: [
+        "fotos/Capacete (5).jpeg",
+        "fotos/Capacete (1).jpeg",
+        "fotos/Capacete (6).jpeg",
+        "fotos/Capacete (7).jpeg",
+        "fotos/Capacete (2).jpeg",
+        "fotos/Capacete (3).jpeg",
+    ]
+  },
+  {
+    name: "Carregador Digital Inteligente de Pilhas Nitecore D4",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 200,00",
+    desc: [
+        "Principais Características",
+        "- Quatro canais: Carrega até quatro baterias ao mesmo tempo. Cada slot funciona de modo independente.",
+        "- Tela LCD: Mostra o status da carga, a voltagem, a corrente e o tempo de uso em tempo real.",
+        "- Segurança: Protege contra inversão de polaridade, curto-circuito e excesso de carga. O aparelho desliga sozinho quando o processo termina.",
+        "- Botões laterais: Permitem mudar configurações ou escolher o tipo de bateria manualmente, se necessário.",
+        "Baterias Compatíveis",
+        "- Líthium (Li-ion e IMR): 26650, 18650, 14500, 16340 e outras medidas comuns.",
+        "- Níquel (Ni-MH e Ni-Cd): Tamanhos AA, AAA, AAAA e C.",
+        "- LiFePO4: Exige seleção manual pelo botão de modo"
+    ],      
+    photos: [
+        "fotos/Vaper Carregador.jpeg"
+    ]
+  },
+  {
+    name: "Computador de 32GB de memória",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 900,00",
+    desc: [
+        "- Placa mãe: Asus H170M-E D3",
+        "- Fonte: Xigmatek 600w X Calibre 80 Plus Xcp A600",
+        "- Processador: Intel core i5-6600",
+        "- Memória 32GB: ",
+        "-- Corsair vengeance ddr3 1600mhz 2x8gb  CMY16GX3M2A1600C9B",
+        "-- Kingston HyperX FURY 16GB (2x8GB) 1600Mhz DDR3 CL10 Red Series - HX316C10FRK2/16."
+    ],      
+    photos: [
+        "fotos/PC 2 (5).jpeg",
+        "fotos/PC 2 (3).jpeg",
+        "fotos/PC 2 (4).jpeg",
+        "fotos/PC 2 (2).jpeg",
+        "fotos/PC 2 (6).jpeg",
+        "fotos/PC 2 (7).jpeg",
+    ]
+  },
+  {
+    name: "Cortador de Cabelo Wahl",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 150,00",
+    desc: [
+        "- Cortador de Cabelo com Fio",
+        "- Marca: Wahl",
+        "- Com vários tamanho de pentes",
+        "- Bolsa para guardar"
+    ],      
+    photos: [
+        "fotos/Cortador de Cabelo Walh (4).jpeg",
+        "fotos/Cortador de Cabelo Walh (2).jpeg",
+        "fotos/Cortador de Cabelo Walh (3).jpeg",
+        "fotos/Cortador de Cabelo Walh (1).jpeg"
+    ]
+  },
+  {
+    name: "Alisador de barba",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 15,00",
+    desc: [
+        "Usado pouquíssimas vezes",
+        "Voltagem: 220v/60Hz"
+    ],      
+    photos: [
+        "fotos/Alisador Barba (3).jpeg",
+        "fotos/Alisador Barba (2).jpeg"
+    ]
+  },
+  {
+    name: "Limpador de Telas Lacrado",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 20,00",
+    desc: [
+        "Lacrado",
+        "com Pano"
+    ],      
+    photos: [
+        "fotos/Limpador de Telas (2).jpeg",
+        "fotos/Limpador de Telas (1).jpeg"
+    ]
+  },
+  {
+    name: "Power Bank 30000mah Turbo 22.5w",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 100,00",
+    desc: [
+        "Turbo 3000mah",
+        "Conector USB-c e lightning.",
+        "Lanterna traseira"
+    ],      
+    photos: [
+        "fotos/PowerBank (1).jpeg",
+        "fotos/PowerBank (2).jpeg",
+        "fotos/PowerBank (3).jpeg",
+        "fotos/PowerBank (5).jpeg",
+        "fotos/PowerBank (4).jpeg"
+    ]
+  },
+  {
+    name: "Alça Traseira Titan Original",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 100,00",
+    desc: [
+        "Com poucos arranhões"
+    ],      
+    photos: [
+        "fotos/Alça traseira Titan (2).jpeg",
+        "fotos/Alça traseira Titan (1).jpeg"
+    ]
+  },
+  {
+    name: "Arroz Japonês TaiChiMai 5kg",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 120,00",
+    desc: [
+        "Grãos curtos ideais para sushi e pratos orientais.",
+        "Embalagem de 5kg para maior conveniência e economia."
+    ],      
+    photos: [
+        "fotos/Arroz Japones (2).jpeg",
+        "fotos/Arroz Japones (1).jpeg",
+        "fotos/Arroz Japones (3).jpeg"
+    ]
+  },
+  {
+    name: "Xiaomi Mi 8 Lite 128 Gb e 6 Gb Ram",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 530,00",
+    desc: [
+        "Memória RAM: 6 GB",
+        "Tem 2 câmeras traseiras de 12Mpx/5Mpx",
+        "Câmera frontal de 24Mpx",
+        "Memória interna de 128GB",
+        "Com reconhecimento facial e sensor de impressão digital"
+    ],      
+    photos: [
+        "fotos/xiaomi mi 8.jpeg",
+        "fotos/xiaomi mi 8 (4).jpeg",
+        "fotos/xiaomi mi 8 (2).jpeg",
+        "fotos/xiaomi mi 8 (1).jpeg",
+        "fotos/xiaomi mi 8 (3).jpeg",
+    ]
+  },
+  {
+    name: "Bandeja com pé",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 25,00",
+    desc: [
+        "Usado 2x apenas"
+    ],      
+    photos: [
+        "fotos/Bandeja (1).jpeg",
+        "fotos/Bandeja (2).jpeg"
+    ]
+  },
+  {
+    name: "Caixa e Garrafa Vazia",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 25,00",
+    desc: [
+        "Vazia"
+    ],      
+    photos: [
+        "fotos/Caixa e Garrafa Vazia.jpeg"
+    ]
+  },
+  {
+    name: "Cantil",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 20,00",
+    desc: [
+        ""
+    ],      
+    photos: [
+        "fotos/Cantil (4).jpeg",
+        "fotos/Cantil (1).jpeg",
+        "fotos/Cantil (3).jpeg"
+    ]
+  },
+  {
+    name: "Copos de Cerveja",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 50,00",
+    desc: [
+        "Vários copos de cerveja estilos diferentes"
+    ],      
+    photos: [
+        "fotos/Copos Cerveja (2).jpeg",
+        "fotos/Copos Cerveja (1).jpeg"
+    ]
+  },
+  {
+    name: "Copos de Cerveja",
+    ativo: true,
+    category: "cozinha",
+    type: "venda",
+    price: "R$ 50,00",
+    desc: [
+        "Vários copos de cerveja estilos diferentes"
+    ],      
+    photos: [
+        "fotos/Copos (2).jpeg",
+        "fotos/Copos (1).jpeg"
+    ]
+  },
+  {
+    name: "Mochila Philips",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 180,00",
+    desc: [
+        "Nunca usado"
+    ],      
+    photos: [
+        "fotos/Mochila (1).jpeg",
+        "fotos/Mochila (2).jpeg",
+        "fotos/Mochila (3).jpeg"
+    ]
+  },
+  {
+    name: "Peças Drone",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 350,00",
+    desc: [
+        "Peças para drone",
+        "nunca usado",
+        "alguns pacotes aberto para conferência.",
+        "Frame F330",
+        "Controladora Sp Racing F3",
+        "Cabo Conector Masculino XT60H-M",
+        "UBEC 3A",
+        "4 Racerstar RS30A Lite",
+        "5 fitas 220mm para bateria",
+        "4 hélices"
+    ],      
+    photos: [
+        "fotos/Peças Drone (2).jpeg",
+        "fotos/Peças Drone (1).jpeg"
+    ]
+  },
+  {
+    name: "Quadro branco pequeno + apagador",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 25,00",
+    desc: [
+        ""
+    ],      
+    photos: [
+        "fotos/Quadro Branco.jpeg"
+    ]
+  },
+  {
+    name: "First Quest - Advanced Dungeons & Dragons 2a Edition",
+    ativo: true,
+    category: "jogos",
+    type: "venda",
+    price: "R$ 1200,00",
+    desc: [
+        "Completo",
+        "sem a caixa"
+    ],      
+    photos: [
+        "fotos/First Quest (2).jpeg",
+        "fotos/First Quest (1).jpeg"
     ]
   },
   {
@@ -291,19 +707,6 @@ const ITEMS = [
     ],
     photos: [
         "fotos/Boardgame/Lobisomem por uma noite montros.jpeg"
-    ]
-  },
-  {
-    name: "Saboteur",
-    ativo: true,
-    category: "jogos",
-    type: "venda",
-    price: "R$ 50,00",
-    desc: [
-        "Pra jogar de galera, com mecânica de dedução social. O jogo é rápido e divertido, ideal para grupos grandes.",
-    ],
-    photos: [
-        "fotos/Boardgame/Saboteur.jpeg"
     ]
   },
   {
@@ -392,169 +795,5 @@ const ITEMS = [
     photos: [
         "fotos/Boardgame/dedin.jpg"
     ]
-  },
-  {
-    name: "Mesa de Centro",
-    ativo: true,
-    category: "moveis",
-    type: "venda",
-    price: "R$ 50,00",
-    desc: [
-        "Mesa de madeira",
-        "Medidas: 60cm x 90cm x 41cm.",
-        "Algumas marcas de uso"
-    ],
-    photos: [
-        "fotos/Mesa de Centro (1).jpeg",
-        "fotos/Mesa de Centro (2).jpeg",
-        "fotos/Mesa de Centro (3).jpeg"
-    ]
-  },
-  {
-    name: "Adega Climatizada",
-    ativo: true,
-    category: "eletro",
-    type: "venda",
-    price: "R$ 400,00",
-    desc: [
-        "Adega Climatizada Electrolux 8 garrafas",
-        "Medidas: 51cm x 25,5cm x 41,5cm."
-    ],
-    photos: [
-        "fotos/Adega Climatizada (1).jpeg",
-        "fotos/Adega Climatizada (5).jpeg",
-        "fotos/Adega Climatizada (6).jpeg",
-        "fotos/Adega Climatizada (7).jpeg",
-        "fotos/Adega Climatizada (4).jpeg",
-        "fotos/Adega Climatizada (3).jpeg",
-        "fotos/Adega Climatizada (2).jpeg"
-    ]
-  },
-  {
-    name: "Rack de Madeira",
-    ativo: true,
-    category: "moveis",
-    type: "venda",
-    price: "R$ 50,00",
-    desc: [
-        "Medidas: 180cm x 47cm x 56cm.",
-        "Possui 4 gavetas",
-        "Algumas marcas de uso"
-    ],
-    photos: [
-        "fotos/Rack 4 gavetas (1).jpeg",
-        "fotos/Rack 4 gavetas (2).jpeg"
-    ]
-  },
-  {
-    name: "Quadro a Criação de Adão",
-    ativo: true,
-    category: "decoracao",
-    type: "venda",
-    price: "R$ 50,00",
-    desc: [
-        "Medidas: 47,5cm x 33,5cm",
-        "Quebra cabeça do quadro de Michelangelo da capela cistina",
-        "Moldura de madeira",
-        "Vidro frontal fosco"
-    ],
-    photos: [
-        "fotos/Quadro Criação do Homem (2).jpeg",
-        "fotos/Quadro Criação do Homem (1).jpeg"
-    ]
-  },
-
-  {
-    name: "Quadro a Dolomita",
-    ativo: true,
-    category: "decoracao",
-    type: "venda",
-    price: "R$ 50,00",
-    desc: [
-        "Medidas: 126,5cm x 82cm",
-        "Quebra cabeça da montanha Dolomita",
-        "Moldura de madeira",
-        "Vidro frontal fosco"
-    ],
-    photos: [
-        "fotos/Quadro Dolomita (2).jpeg",
-        "fotos/Quadro Dolomita (1).jpeg"
-    ]
-  },
-  {
-    name: "Armário de Quina",
-    ativo: true,
-    category: "moveis",
-    type: "venda",
-    price: "R$ 200,00",
-    desc: [
-        "Armário de quina de madeira",
-        "Medidas: 72,5cm x 38cm x 52,5cm e 160cm altura",
-    ],
-    photos: [
-        "fotos/Estante de Quina (1).jpeg",
-        "fotos/Estante de Quina (2).jpeg"
-    ]
-  },
-  {
-    name: "Mesa de 6 Lugares",
-    ativo: true,
-    category: "moveis",
-    type: "venda",
-    price: "R$ 2500,00",
-    desc: [
-        "Medidas: 180cm x 90cm x 80cm",
-        "Mesa de Laca Preto",
-        "6 lugares",
-        "quinas arredondadas",
-        "Pé em X de madeira maciça",
-        "Tecido das cadeiras com marcas de uso"
-    ],
-    photos: [
-        "fotos/Mesa (1).jpeg",
-        "fotos/Mesa (3).jpeg",
-        "fotos/Mesa (4).jpeg",
-        "fotos/Mesa (2).jpeg",
-        "fotos/Mesa (5).jpeg",
-        "fotos/Mesa (6).jpeg",
-        "fotos/Mesa (7).jpeg"
-    ]
-  },
-  {
-    name: "Escova Rotativa",
-    ativo: true,
-    category: "eletro",
-    type: "venda",
-    price: "R$ 100,00",
-    desc: [
-        "Secador de cabelo giratório",
-        "Marca: MONDIAL",
-        "Modelo: ER-11-AR",
-        "Potência: 1000W",
-        "Voltagem: 127V"
-    ],
-    photos: [
-        "fotos/Secador Giratório (1).jpeg",
-        "fotos/Secador Giratório (2).jpeg",
-        "fotos/Secador Giratório (3).jpeg"
-    ]
-  },
-  {
-    name: "Raquete de Tênis + Overgrip",
-    ativo: true,
-    category: "outros",
-    type: "venda",
-    price: "R$ 100,00",
-    desc: [
-        "Marca: HEAD",
-        "Modelo: ",
-        "2 Overgrips ARTENGO",
-        "Capa protetora da raquete"
-
-    ],
-    photos: [
-        "fotos/Raquete de Tennis (2).jpeg",
-        "fotos/Raquete de Tennis (1).jpeg"
-    ]
-  },
+  }
 ];
