@@ -467,7 +467,7 @@ const ITEMS = [
   {
     name: "Arroz Japonês TaiChiMai 5kg",
     ativo: true,
-    category: "outros",
+    category: "cozinha",
     type: "venda",
     price: "R$ 120,00",
     desc: [
