@@ -191,7 +191,7 @@
     overflow:hidden;
     touch-action:pan-y;
   }
-  .photo img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in;}
+  .photo img{width:100%;height:100%;object-fit:contain;display:block;cursor:zoom-in;}
   .photo svg{width:46%;opacity:0.55;}
   .photo-nav{
     position:absolute;
@@ -366,8 +366,8 @@
   .lightbox.open{display:flex;}
   .lightbox-card{
     position:relative;
-    max-width:min(900px, 92vw);
-    max-height:92vh;
+    width:min(900px, 92vw);
+    height:min(900px, 88vh);
     background:var(--paper);
     padding:10px;
     box-shadow:0 10px 34px rgba(0,0,0,0.45);
@@ -378,8 +378,8 @@
   }
   .lightbox img{
     display:block;
-    max-width:100%;
-    max-height:calc(92vh - 20px);
+    width:100%;
+    height:100%;
     object-fit:contain;
   }
   .lightbox-close{
@@ -500,7 +500,10 @@ function buildFilters(){
   allBtn.textContent = 'Todas categorias';
   allBtn.onclick = ()=>{ activeCat='todos'; currentPage=1; refreshActive(catWrap, allBtn); render(); };
   catWrap.appendChild(allBtn);
+  // Só mostra categorias que têm pelo menos um item ativo
+  const usedCats = new Set(ITEMS.filter(i => i.ativo !== false).map(i => i.category));
   Object.entries(CATEGORIES).forEach(([key,label])=>{
+    if(!usedCats.has(key)) return;
     const b = document.createElement('button');
     b.className = 'filter-btn';
     b.textContent = label;
