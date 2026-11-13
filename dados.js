@@ -10,6 +10,7 @@ const ICONS = {
   decoracao: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="10" y="10" width="44" height="34" rx="2"/><path d="M10 34l12-12 10 10 10-14 12 16"/><circle cx="20" cy="20" r="3"/></svg>`,
   tecnologia: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="8" y="10" width="48" height="32" rx="3"/><path d="M24 54h16M32 42v12"/></svg>`,
   casa: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><path d="M8 30L32 10l24 20"/><path d="M14 26v28h36V26"/><path d="M27 54V38h10v16"/></svg>`,
+  ferramentas: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><path d="M42 10a12 12 0 0 0-9 17L12 48a5 5 0 0 0 7 7l21-21a12 12 0 0 0 17-9l-7 7-6-2-2-6 7-7a12 12 0 0 0-7-4z"/></svg>`,
   livros: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><path d="M10 12h18a4 4 0 0 1 4 4 4 4 0 0 1 4-4h18v38H36a4 4 0 0 0-4 4 4 4 0 0 0-4-4H10z"/><path d="M32 16v38"/></svg>`,
   drones: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><rect x="26" y="28" width="12" height="8" rx="2"/><path d="M26 30l-12-8M38 30l12-8M26 34l-12 8M38 34l12 8"/><circle cx="12" cy="20" r="5"/><circle cx="52" cy="20" r="5"/><circle cx="12" cy="44" r="5"/><circle cx="52" cy="44" r="5"/></svg>`,
   esporte: `<svg viewBox="0 0 64 64" fill="none" stroke="#2b241c" stroke-width="2.5"><circle cx="32" cy="32" r="22"/><path d="M10 32h44M32 10c-10 8-10 36 0 44M32 10c10 8 10 36 0 44"/></svg>`,
@@ -19,19 +20,20 @@ const ICONS = {
 };
 
 const CATEGORIES = {
-  jogos:      "Jogos",
-  eletro:     "Eletrodomésticos",
-  tecnologia: "Tecnologia",
-  moveis:     "Móveis",
-  cozinha:    "Cozinha",
-  decoracao:  "Decoração",
-  casa:       "Casa e utilidades",
-  livros:     "Livros e leitura",
-  drones:     "Drones e bonsai",
-  esporte:    "Esporte e acessórios",
-  cuidados:   "Cuidados pessoais",
-  pets:       "Pets",
-  outros:     "Outros"
+  jogos:       "Jogos",
+  eletro:      "Eletrodomésticos",
+  tecnologia:  "Tecnologia",
+  moveis:      "Móveis",
+  cozinha:     "Cozinha",
+  decoracao:   "Decoração",
+  casa:        "Casa e utilidades",
+  ferramentas: "Ferramentas",
+  livros:      "Livros e leitura",
+  drones:      "Drones e bonsai",
+  esporte:     "Esporte e acessórios",
+  cuidados:    "Cuidados pessoais",
+  pets:        "Pets",
+  outros:      "Outros"
 };
 
 /* Adicione, edite ou remova itens aqui.
@@ -63,11 +65,57 @@ const ITEMS = [
     ]
   },
   {
+    name: "Jogos de Tabuleiro",
+    ativo: true,
+    category: "Jogos",
+    type: "venda",
+    price: "Variados",
+    desc: [
+        "- Pega em 6! - 80,00",
+        "- Viticulture - 500,00",
+        "- Exploding Kittens - Inglês - 200,00",
+        "- Streaking Kitten Espansão - Inglês - 50,00",
+        "- Fields of Green - 180,00",
+        "- Caverna: Cave vs Cave - 250,00",
+        "- Coloretto - 120,00",
+        "- Zombicide Rue Morgue - 450,00",
+        "- War Vikings - 150,00",
+        "- San Juan (2ª Edição) - 150,00",
+        "- The Mind - 65,00",
+        "- Deckscape - Ameaça em Londres - 30,00",
+        "- Lobisomem Por Uma Noite - Montros - 50,00",
+        "- Dedín + 2 cartas extras - 30,00",
+        "- A Tale of Pirates - 250,00",
+        "- 7 Wonders Duel - 200,00",
+        "- Fields of Green Promo Pack - 65,00",
+        "- Viticulture: Visitantes do Charco - 65,00",
+        "- Viticulture: Visitantes do Vale do Reno - 65,00",
+        "- Arkham Horror - 400,00",
+        "- Futuropia - 180,00",
+        "- Expansão Zombicide: Oksana, The Stunt Woman - 50,00",
+        "- Expansão Zombicide: Miss Trish The Kindergarten Teacher - 50,00",
+        "- Expansão Zombicide: Nikki The Gator Wrangler - 50,00",
+        "- Expansão Zombicide: Patrick The Hipster - 50,00",
+        "- Expansão Zombicide: Gaming Night #5: Protocolo Bluehand - 200,00",
+        "- Fungi - 100,00",
+        "- Village Green - 80,00",
+        "- Bananagrams - 90,00",
+        "- Jaipur - 150,00",
+        "- Exploding Kittens - Português - 110,00",
+        "- Unstable Unicorns - 100,00",
+    ],
+    photos: [
+        "fotos/Jogos (3).jpeg",
+        "fotos/Jogos (4).jpeg",
+        "fotos/Jogos (5).jpeg"
+    ]
+  },
+  {
     name: "A Tale of Pirates",
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 220,00",
+    price: "R$ 250,00",
     desc: [
         "Jogo caótico que monta um barco na mesa",
         "Jogado até a missão 3",
@@ -82,7 +130,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 100,00",
+    price: "R$ 120,00",
     desc: [
         "Jogo de cartas",
         "Você precisa coletar cartas de cores diferentes para ganhar pontos",
@@ -97,7 +145,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 50,00",
+    price: "R$ 110,00",
     desc: [
         "Jogo de palavras cruzadas",
         "Jogado 1 vez"
@@ -111,7 +159,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 150,00",
+    price: "R$ 180,00",
     desc: [
         "Jogo de planejamento econômico. A mecânica de otimização de recursos é desafiadora e proporciona partidas estratégicas e envolventes",
         "Jogado 1 vez"
@@ -211,7 +259,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 40,00",
+    price: "R$ 30,00",
     desc: [
         "Jogo de cartas bem rápido e divertido.",
         "Jogo para até 4 pessoas",
@@ -299,7 +347,7 @@ const ITEMS = [
   },
   {
     name: "Mesa de Centro de Madeira Maciça",
-    ativo: true,
+    ativo: false,
     category: "moveis",
     type: "venda",
     price: "R$ 200,00",
@@ -316,7 +364,7 @@ const ITEMS = [
   },
   {
     name: "Adega Climatizada",
-    ativo: false,
+    ativo: true,
     category: "eletro",
     type: "venda",
     price: "R$ 500,00",
@@ -342,7 +390,7 @@ const ITEMS = [
     price: "R$ 100,00",
     desc: [
         "Medidas: 47,5cm x 33,5cm",
-        "Quebra cabeça de 1000 peças mini do quadro de Michelangelo da capela cistina",
+        "Quebra cabeça de 1000 peças mini do quadro de Michelangelo da capela sistina",
         "Moldura de madeira",
         "Vidro frontal fosco"
     ],
@@ -472,21 +520,6 @@ const ITEMS = [
         "fotos/Cortador de Cabelo Walh (2).jpeg",
         "fotos/Cortador de Cabelo Walh (3).jpeg",
         "fotos/Cortador de Cabelo Walh (1).jpeg"
-    ]
-  },
-  {
-    name: "Alisador de barba",
-    ativo: false,
-    category: "cuidados",
-    type: "venda",
-    price: "R$ 15,00",
-    desc: [
-        "Usado pouquíssimas vezes",
-        "Voltagem: 220v/60Hz"
-    ],      
-    photos: [
-        "fotos/Alisador Barba (3).jpeg",
-        "fotos/Alisador Barba (2).jpeg"
     ]
   },
   {
@@ -620,31 +653,14 @@ const ITEMS = [
     ]
   },
   {
-    name: "Adega de Vinho Climatizada Electrolux 8 garrafas",
-    ativo: true,
-    category: "eletro",
-    type: "venda",
-    price: "R$ 500,00",
-    desc: [
-        ""
-    ],
-    photos: [
-        "fotos/Adega Climatizada (1).jpeg",
-        "fotos/Adega Climatizada (5).jpeg",
-        "fotos/Adega Climatizada (6).jpeg",
-        "fotos/Adega Climatizada (4).jpeg",
-        "fotos/Adega Climatizada (3).jpeg",
-        "fotos/Adega Climatizada (2).jpeg"
-    ]
-  },
-  {
     name: "Alisador de barba 220v",
     ativo: false,
     category: "cuidados",
     type: "venda",
     price: "R$ 15,00",
     desc: [
-        "Alisador de barba elétrico 220v."
+        "Usado pouquíssimas vezes",
+        "Tensão: 220v/60Hz"
     ],
     photos: [
         "fotos/alisador.png",
@@ -680,34 +696,6 @@ const ITEMS = [
     photos: [
         "fotos/Arame (2).jpeg",
         "fotos/Arame (1).jpeg"
-    ]
-  },
-  {
-    name: "Arranhador de Gato 3 andares",
-    ativo: false,
-    category: "pets",
-    type: "venda",
-    price: "R$ ",
-    desc: [
-        ""
-    ],
-    photos: [
-        "fotos/Arranhador (2).jpeg",
-        "fotos/Arranhador (1).jpeg"
-    ]
-  },
-  {
-    name: "Arranhador de gato pequeno",
-    ativo: true,
-    category: "pets",
-    type: "venda",
-    price: "R$ 20,00",
-    desc: [
-        ""
-    ],
-    photos: [
-        "fotos/Arranhdor pequeno (1).jpeg",
-        "fotos/Arranhdor pequeno (2).jpeg"
     ]
   },
   {
@@ -752,25 +740,6 @@ const ITEMS = [
         "fotos/cooler wine (1).jpeg",
         "fotos/cooler wine (3).jpeg",
         "fotos/cooler wine (2).jpeg"
-    ]
-  },
-  {
-    name: "Kit para Vinho",
-    ativo: false,
-    category: "casa",
-    type: "venda",
-    price: "R$ 130,00",
-    desc: [
-        ""
-    ],
-    photos: [
-        "fotos/Kit Vinho (7).jpeg",
-        "fotos/Kit Vinho (5).jpeg",
-        "fotos/Kit Vinho (8).jpeg",
-        "fotos/Kit Vinho (3).jpeg",
-        "fotos/Kit Vinho (4).jpeg",
-        "fotos/Kit Vinho (2).jpeg",
-        "fotos/Kit Vinho (1).jpeg"
     ]
   },
   {
@@ -857,7 +826,7 @@ const ITEMS = [
     ativo: true,
     category: "livros",
     type: "venda",
-    price: "R$ ",
+    price: "R$ 500,00",
     desc: [
         "- Tela: 6 polegadas com tecnologia E-Ink antirreflexo.",
         "- Resolução: 300 ppi.",
@@ -977,7 +946,7 @@ const ITEMS = [
     ativo: true,
     category: "drones",
     type: "venda",
-    price: "R$ ",
+    price: "R$ 100,00",
     desc: [
         "pré bonsai de Serissa Chinesa - 4 anos",
         "pré bonsai de Pitanga - 2,5 anos"
@@ -1043,21 +1012,7 @@ const ITEMS = [
     ]
   },
   {
-    name: "Balança digital com bioimpedancia",
-    ativo: true,
-    category: "cuidados",
-    type: "venda",
-    price: "R$ 30,00",
-    desc: [
-        ""
-    ],
-    photos: [
-        "fotos/Balança (1).jpeg",
-        "fotos/Balança (2).jpeg"
-    ]
-  },
-  {
-    name: "Proteção de costela e de pescoço",
+    name: "Proteção de costela e de pescoço para kart",
     ativo: true,
     category: "esporte",
     type: "venda",
@@ -1072,6 +1027,133 @@ const ITEMS = [
         "fotos/Protetor de costela (4).jpeg",
         "fotos/Protetor cervical (1).jpeg",
         "fotos/Protetor cervical (2).jpeg",
+    ]
+  },
+  {
+    name: "Bebedouro automático",
+    ativo: true,
+    category: "pets",
+    type: "venda",
+    price: "R$ ",
+    desc: [
+        "cabe 2 Litros de água"
+    ],
+    photos: [
+        "fotos/Bebedouro automático.jpeg"
+    ]
+  },
+  {
+    name: "Dispensor automático de ração",
+    ativo: true,
+    category: "pets",
+    type: "venda",
+    price: "R$ ",
+    desc: [
+        "possui 2 tigelas separadas ideal para 2 pets",
+    ],
+    photos: [
+        "fotos/Comedor automático.jpeg"
+    ]
+  },
+  {
+    name: "Chuveiro Acqua Duo Ultra Branco Lorenzetti",
+    ativo: true,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 380,00",
+    desc: [
+        "- 220V 7800W"
+    ],
+    photos: [
+        "fotos/Chuveiro 220v.jpeg",
+        "fotos/Chuveiro 220v (3).jpeg"
+    ]
+  },
+  {
+    name: "Furadeira Parafusadeira Impacto Sem Fio GSB 185-LI 18V  + Pontas e Brocas",
+    ativo: true,
+    category: "ferramentas",
+    type: "venda",
+    price: "R$ 600,00",
+    desc: [
+        "- Kit de Pontas e Brocas Bosch V-Line 41 pçs",
+        "- Maleta Bosch"
+    ],
+    photos: [
+        "fotos/Furadeira (4).jpeg",
+        "fotos/Furadeira (3).jpeg",
+        "fotos/Furadeira (2).jpeg",
+        "fotos/Furadeira (1).jpeg"
+    ]
+  },
+  {
+    name: "Caixa de Som Tomate mts 2026",
+    ativo: true,
+    category: "tecnologia",
+    type: "venda",
+    price: "R$ 500,00",
+    desc: [
+        "- Potência: 100W RMS/total",
+        "- Conectividade: Bluetooth (alcance de até 12m), entrada óptica digital, RCA, Auxiliar P2 e USB",
+        "- Componentes: Woofer de 116 mm e tweeter com domo de seda de 13 mm",
+        "- Construção: Gabinete em MDF com acabamento madeirado e face plate removível"
+    ],
+    photos: [
+        "fotos/Caixa de som (3).jpeg",
+        "fotos/Caixa de som (2).jpeg",
+        "fotos/Caixa de som (1).jpeg",
+        "fotos/Caixa de som (4).jpeg"
+    ]
+  },
+  {
+    name: "Suporte de Mesa Articulado ELG F196 ",
+    ativo: true,
+    category: "tecnologia",
+    type: "venda",
+    price: "R$ 250,00",
+    desc: [
+        "- Possui 2 saídas USB",
+        "- Suporta 2 monitores de 17 a 35 polegadas"
+    ],
+    photos: [
+        "fotos/Braço 2 monitores (2).jpeg",
+        "fotos/Braço 2 monitores (1).jpeg"
+    ]
+  },
+  {
+    name: "Naquile Pequeno Triton",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 360,00",
+    desc: [
+        "- Rosh Artisan Prime - Marca : SAKAMOTO",
+        "- Papel Alumínio - Predator Skin Edition - 50 Folhas",
+        "- Papel Alumínio - Predator Classic Edition - 30 Folhas",
+        "- Tela p/ Rosh - Marca : Sultan",
+        "- Kit Limpeza com 2 escovas",
+        "- Tapete",
+        "- Naquile Pequeno Triton",
+        "- Vaso",
+        "- Fogareiro 110v",
+        "- Abafador",
+        "- Pegador"
+    ],
+    photos: [
+        "fotos/Narguile (6).jpeg",
+        "fotos/Narguile (4).jpeg",
+        "fotos/Narguile (2).jpeg",
+        "fotos/Narguile (3).jpeg",
+        "fotos/Narguile (5).jpeg",
+        "fotos/Narguile (1).jpeg",
+        "fotos/Narguile (11).jpeg",
+        "fotos/Narguile (12).jpeg",
+        "fotos/fogareiro (1).jpeg",
+        "fotos/fogareiro (2).jpeg",
+        "fotos/Narguile (7).jpeg",
+        "fotos/Narguile (8).jpeg",
+        "fotos/Narguile (9).jpeg",
+        "fotos/Narguile (10).jpeg"
     ]
   }
 ];
