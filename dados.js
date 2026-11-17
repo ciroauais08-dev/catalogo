@@ -331,23 +331,6 @@ const ITEMS = [
     ]
   },
   {
-    name: "Mesa de Centro de Madeira Maciça",
-    ativo: false,
-    category: "moveis",
-    type: "venda",
-    price: "R$ 200,00",
-    desc: [
-        "Mesa de madeira",
-        "Medidas: 60cm x 90cm x 41cm.",
-        "Algumas marcas de uso"
-    ],
-    photos: [
-        "fotos/Mesa de Centro (1).jpeg",
-        "fotos/Mesa de Centro (2).jpeg",
-        "fotos/Mesa de Centro (3).jpeg"
-    ]
-  },
-  {
     name: "Adega Climatizada",
     ativo: true,
     category: "eletro",
@@ -470,14 +453,16 @@ const ITEMS = [
     ativo: true,
     category: "tecnologia",
     type: "venda",
-    price: "R$ 900,00",
+    price: "R$ 850,00",
     desc: [
         "- Placa mãe: Asus H170M-E D3",
         "- Fonte: Xigmatek 600w X Calibre 80 Plus Xcp A600",
         "- Processador: Intel core i5-6600",
+        "- HD de 1TB",
         "- Memória 32GB: ",
         "-- Corsair vengeance ddr3 1600mhz 2x8gb  CMY16GX3M2A1600C9B",
         "-- Kingston HyperX FURY 16GB (2x8GB) 1600Mhz DDR3 CL10 Red Series - HX316C10FRK2/16."
+        
     ],      
     photos: [
         "fotos/PC 2 (5).jpeg",
@@ -651,7 +636,7 @@ const ITEMS = [
     ativo: false,
     category: "drones",
     type: "venda",
-    price: "R$ ",
+    price: "R$ 25,00",
     desc: [
         ""
     ],
@@ -1106,7 +1091,7 @@ const ITEMS = [
     ]
   },
   {
-    name: "Naquile Pequeno Triton",
+    name: "Naguile Pequeno Triton",
     ativo: true,
     category: "outros",
     type: "venda",
@@ -1118,7 +1103,7 @@ const ITEMS = [
         "- Tela p/ Rosh - Marca : Sultan",
         "- Kit Limpeza com 2 escovas",
         "- Tapete",
-        "- Naquile Pequeno Triton",
+        "- Naguile Pequeno Triton",
         "- Vaso",
         "- Fogareiro 110v",
         "- Abafador",
