@@ -54,7 +54,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 1000,00",
+    price: "R$ 800,00",
     desc: [
         "Completo",
         "sem a caixa"
@@ -71,38 +71,37 @@ const ITEMS = [
     type: "venda",
     price: "Variados",
     desc: [
-        "- Pega em 6! - 80,00",
-        "- Viticulture - 500,00",
-        "- Expansão Viticulture: Visitantes do Charco - 65,00",
-        "- Expansão Viticulture: Visitantes do Vale do Reno - 65,00",
-        "- Exploding Kittens - Inglês - 200,00",
-        "- Expansão Streaking Kitten Espansão - Inglês - 50,00",
+        "- Pega em 6! - 70,00",
+        "- Viticulture - 430,00",
+        "- Expansão Viticulture: Visitantes do Charco - 50,00",
+        "- Expansão Viticulture: Visitantes do Vale do Reno - 50,00",
+        "- Exploding Kittens Party - Inglês - 200,00",
+        "- Expansão Streaking Kitten - Inglês - 50,00",
         "- Fields of Green - 180,00",
+        "- Expansão Fields of Green Promo Pack - 85,00",
         "- Caverna: Cave vs Cave - 250,00",
-        "- Coloretto - 120,00",
+        "- Coloretto - 100,00",
         "- Zombicide Rue Morgue - 450,00",
         "- Expansão Zombicide: Oksana, The Stunt Woman - 50,00",
         "- Expansão Zombicide: Miss Trish The Kindergarten Teacher - 50,00",
         "- Expansão Zombicide: Nikki The Gator Wrangler - 50,00",
         "- Expansão Zombicide: Patrick The Hipster - 50,00",
-        "- Expansão Zombicide: Gaming Night #5: Protocolo Bluehand - 200,00",
-        "- War Vikings - 150,00",
+        "- Expansão Zombicide: Gaming Night #5: Protocolo Bluehand - 120,00",
+        "- War Vikings - 130,00",
         "- San Juan (2ª Edição) - 150,00",
-        "- The Mind - 65,00",
+        "- The Mind - 40,00",
         "- Deckscape - Ameaça em Londres - 30,00",
         "- Lobisomem Por Uma Noite - Montros - 50,00",
         "- Dedín + 2 cartas extras - 30,00",
-        "- A Tale of Pirates - 250,00",
-        "- 7 Wonders Duel - 200,00",
-        "- Fields of Green Promo Pack - 65,00",
+        "- A Tale of Pirates - 230,00",
+        "- 7 Wonders Duel - 190,00",
         "- Arkham Horror - 400,00",
         "- Futuropia - 180,00",
-        "- Fungi - 100,00",
-        "- Village Green - 80,00",
-        "- Bananagrams - 90,00",
-        "- Jaipur - 150,00",
-        "- Exploding Kittens - Português - 110,00",
-        "- Unstable Unicorns - 100,00",
+        "- Fungi - 90,00",
+        "- Bananagrams - 85,00",
+        "- Jaipur - 130,00",
+        "- Exploding Kittens - Para Galera - Português - 110,00",
+        "- Unstable Unicorns - 90,00"
     ],
     photos: [
         "fotos/Jogos (3).jpeg",
@@ -115,7 +114,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 250,00",
+    price: "R$ 230,00",
     desc: [
         "Jogo caótico que monta um barco na mesa",
         "Jogado até a missão 3",
@@ -130,7 +129,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 120,00",
+    price: "R$ 100,00",
     desc: [
         "Jogo de cartas",
         "Você precisa coletar cartas de cores diferentes para ganhar pontos",
@@ -141,11 +140,11 @@ const ITEMS = [
     ]
   },
   {
-    name: "Bananagrama",
+    name: "Bananagrams",
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 110,00",
+    price: "R$ 85,00",
     desc: [
         "Jogo de palavras cruzadas",
         "Jogado 1 vez"
@@ -187,7 +186,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 50,00",
+    price: "R$ 40,00",
     desc: [
         "Jogo de fazer sequencia númerica mas sem se comunicar. O jogo é rápido e divertido",
     ],
@@ -196,22 +195,8 @@ const ITEMS = [
     ]
   },
   {
-    name: "Tiny Epic Dinosaur",
-    ativo: false,
-    category: "jogos",
-    type: "venda",
-    price: "R$ 200,00",
-    desc: [
-        "Jogo de construir um parque de dinossauros.",
-        "Jogado 3 vezes"
-    ],
-    photos: [
-        "fotos/Boardgame/tiny epic dinosaurs.jpeg"
-    ]
-  },
-  {
     name: "Vilage Green",
-    ativo: true,
+    ativo: false,
     category: "jogos",
     type: "venda",
     price: "R$ 80,00",
@@ -229,7 +214,7 @@ const ITEMS = [
     ativo: true,
     category: "jogos",
     type: "venda",
-    price: "R$ 150,00",
+    price: "R$ 130,00",
     desc: [
         "Jogo de war na tematica viking.",
         "Jogo para até 4 pessoas",
@@ -255,7 +240,7 @@ const ITEMS = [
     ]
   },
   {
-    name: "Dedín",
+    name: "Dedín + 2 cartas extras",
     ativo: true,
     category: "jogos",
     type: "venda",
@@ -603,29 +588,6 @@ const ITEMS = [
     ]
   },
   {
-    name: "Peças Drone",
-    ativo: true,
-    category: "drones",
-    type: "venda",
-    price: "R$ 300,00",
-    desc: [
-        "Peças para drone",
-        "nunca usado",
-        "alguns pacotes aberto para conferência.",
-        "Frame F330",
-        "Controladora Sp Racing F3",
-        "Cabo Conector Masculino XT60H-M",
-        "UBEC 3A",
-        "4 Racerstar RS30A Lite",
-        "5 fitas 220mm para bateria",
-        "4 hélices"
-    ],      
-    photos: [
-        "fotos/Peças Drone (1).jpeg",
-        "fotos/Peças Drone (2).jpeg"
-    ]
-  },
-  {
     name: "Quadro branco pequeno + apagador",
     ativo: true,
     category: "casa",
@@ -670,7 +632,7 @@ const ITEMS = [
     ]
   },
   {
-    name: "Amigurumi Peso de porta - Cartman",
+    name: "Amigurumi peso de porta - Cartman",
     ativo: true,
     category: "decoracao",
     type: "venda",
@@ -747,7 +709,7 @@ const ITEMS = [
     ativo: true,
     category: "tecnologia",
     type: "venda",
-    price: "R$ 60,00",
+    price: "R$ 45,00",
     desc: [
         ""
     ],
@@ -761,7 +723,7 @@ const ITEMS = [
     ativo: true,
     category: "eletro",
     type: "venda",
-    price: "R$ 420,00",
+    price: "R$ 300,00",
     desc: [
         ""
     ],
@@ -778,7 +740,7 @@ const ITEMS = [
     ativo: true,
     category: "esporte",
     type: "venda",
-    price: "R$ 280,00",
+    price: "R$ 230,00",
     desc: [
         "tamanho 39"
     ],
@@ -892,32 +854,6 @@ const ITEMS = [
     ]
   },
   {
-    name: "Utensilhos para bonsai",
-    ativo: true,
-    category: "drones",
-    type: "venda",
-    price: "R$ 150,00",
-    desc: [
-        "- 1kg caqueira",
-        "- 2kg pedrisco",
-        "- Arame 06,11 e 14 100g",
-        "- 15 Porta adubos",
-        "- Osmocote 15-09-12",
-        "- Sementes de caliandra, piteco",
-        "- Vasos de plastico",
-        "- Rolo tela de drenagem"
-    ],
-    photos: [
-        "fotos/Kit Bonsai (6).jpeg",
-        "fotos/Kit Bonsai (1).jpeg",
-        "fotos/Kit Bonsai (2).jpeg",
-        "fotos/Kit Bonsai (3).jpeg",
-        "fotos/Kit Bonsai (4).jpeg",
-        "fotos/Kit Bonsai (5).jpeg",
-        "fotos/Kit Bonsai (7).jpeg"
-    ]
-  },
-  {
     name: "Drone Visuo Xs809 + Baterias",
     ativo: true,
     category: "drones",
@@ -942,6 +878,29 @@ const ITEMS = [
     ]
   },
   {
+    name: "Peças Drone",
+    ativo: true,
+    category: "drones",
+    type: "venda",
+    price: "R$ 300,00",
+    desc: [
+        "Peças para drone",
+        "nunca usado",
+        "alguns pacotes aberto para conferência.",
+        "Frame F330",
+        "Controladora Sp Racing F3",
+        "Cabo Conector Masculino XT60H-M",
+        "UBEC 3A",
+        "4 Racerstar RS30A Lite",
+        "5 fitas 220mm para bateria",
+        "4 hélices"
+    ],      
+    photos: [
+        "fotos/Peças Drone (1).jpeg",
+        "fotos/Peças Drone (2).jpeg"
+    ]
+  },
+  {
     name: "2 pré bonsais - Pitanga e Serissa",
     ativo: true,
     category: "drones",
@@ -962,6 +921,32 @@ const ITEMS = [
         "fotos/Bonsai Serissa (2).jpeg",
         "fotos/Bonsai Serissa (3).jpeg",
         "fotos/Bonsai Serissa (4).jpeg"
+    ]
+  },
+  {
+    name: "Utensilhos para bonsai",
+    ativo: true,
+    category: "drones",
+    type: "venda",
+    price: "R$ 150,00",
+    desc: [
+        "- 1kg caqueira",
+        "- 2kg pedrisco",
+        "- Arame 06,11 e 14 100g",
+        "- 15 Porta adubos",
+        "- Osmocote 15-09-12",
+        "- Sementes de caliandra, piteco",
+        "- Vasos de plastico",
+        "- Rolo tela de drenagem"
+    ],
+    photos: [
+        "fotos/Kit Bonsai (6).jpeg",
+        "fotos/Kit Bonsai (1).jpeg",
+        "fotos/Kit Bonsai (2).jpeg",
+        "fotos/Kit Bonsai (3).jpeg",
+        "fotos/Kit Bonsai (4).jpeg",
+        "fotos/Kit Bonsai (5).jpeg",
+        "fotos/Kit Bonsai (7).jpeg"
     ]
   },
   {
@@ -1034,7 +1019,7 @@ const ITEMS = [
     ativo: true,
     category: "pets",
     type: "venda",
-    price: "R$ ",
+    price: "R$ 150,00",
     desc: [
         "cabe 2 Litros de água"
     ],
@@ -1043,11 +1028,11 @@ const ITEMS = [
     ]
   },
   {
-    name: "Dispensor automático de ração",
+    name: "Dispensor automático de ração duplo",
     ativo: true,
     category: "pets",
     type: "venda",
-    price: "R$ ",
+    price: "R$ 200,00",
     desc: [
         "possui 2 tigelas separadas ideal para 2 pets",
     ],
@@ -1060,7 +1045,7 @@ const ITEMS = [
     ativo: true,
     category: "eletro",
     type: "venda",
-    price: "R$ 380,00",
+    price: "R$ 350,00",
     desc: [
         "- 220V 7800W"
     ],
@@ -1070,7 +1055,7 @@ const ITEMS = [
     ]
   },
   {
-    name: "Furadeira Parafusadeira Impacto Sem Fio GSB 185-LI 18V  + Pontas e Brocas",
+    name: "Furadeira Parafusadeira Impacto Sem Fio GSB 185-LI 18V + Pontas e Brocas",
     ativo: true,
     category: "ferramentas",
     type: "venda",
@@ -1091,7 +1076,7 @@ const ITEMS = [
     ativo: true,
     category: "tecnologia",
     type: "venda",
-    price: "R$ 500,00",
+    price: "R$ 450,00",
     desc: [
         "- Potência: 100W RMS/total",
         "- Conectividade: Bluetooth (alcance de até 12m), entrada óptica digital, RCA, Auxiliar P2 e USB",
@@ -1110,7 +1095,7 @@ const ITEMS = [
     ativo: true,
     category: "tecnologia",
     type: "venda",
-    price: "R$ 250,00",
+    price: "R$ 200,00",
     desc: [
         "- Possui 2 saídas USB",
         "- Suporta 2 monitores de 17 a 35 polegadas"
