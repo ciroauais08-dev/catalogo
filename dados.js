@@ -273,21 +273,6 @@ const ITEMS = [
         "fotos/TV LG OLED (3).jpeg",
     ]
   },
- {
-    name: "",
-    ativo: true,
-    category: "eletro",
-    type: "venda",
-    price: "R$ 1200,00",
-    desc: [
-        ""
-    ],
-    photos: [
-        "fotos/Mesinha de Cabeceira.jpeg",
-        "fotos/Mesinha de Cabeceira 2.jpeg"
-    ]
-  },
-
   {
     name: "Duas Mesinhas de cabeceira",
     ativo: true,
