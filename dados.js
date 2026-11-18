@@ -71,7 +71,6 @@ const ITEMS = [
     type: "venda",
     price: "Variados",
     desc: [
-        "- Pega em 6! - 70,00",
         "- Viticulture - 430,00",
         "- Expansão Viticulture: Visitantes do Charco - 50,00",
         "- Expansão Viticulture: Visitantes do Vale do Reno - 50,00",
@@ -89,7 +88,6 @@ const ITEMS = [
         "- Expansão Zombicide: Gaming Night #5: Protocolo Bluehand - 120,00",
         "- War Vikings - 130,00",
         "- San Juan (2ª Edição) - 150,00",
-        "- The Mind - 40,00",
         "- Deckscape - Ameaça em Londres - 30,00",
         "- Lobisomem Por Uma Noite - Montros - 50,00",
         "- Dedín + 2 cartas extras - 30,00",
@@ -257,6 +255,40 @@ const ITEMS = [
 
   /* ===== DEMAIS ITENS ===== */
   {
+    name: "TV LG OLED 55\" C1",
+    ativo: true,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 2000,00",
+    desc: [
+        "Tipo de painel: OLED 4K (WRGB) com pixels que se autoiluminam",
+        "Resolução: 4K Ultra HD (3.840 x 2.160 pixels)",
+        "Taxa de atualização: 120Hz nativo",
+        "Processador de imagem: α7 (Alpha 7) Gen 4 ou α9 Gen 4 (dependendo da região/lote, com foco em otimização por IA)",
+        "Tecnologias HDR: Dolby Vision, HDR10 e HLG"
+    ],
+    photos: [
+        "fotos/TV LG OLED (1).jpeg",
+        "fotos/TV LG OLED (2).jpeg",
+        "fotos/TV LG OLED (3).jpeg",
+    ]
+  },
+ {
+    name: "",
+    ativo: true,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 1200,00",
+    desc: [
+        ""
+    ],
+    photos: [
+        "fotos/Mesinha de Cabeceira.jpeg",
+        "fotos/Mesinha de Cabeceira 2.jpeg"
+    ]
+  },
+
+  {
     name: "Duas Mesinhas de cabeceira",
     ativo: true,
     category: "moveis",
@@ -348,6 +380,94 @@ const ITEMS = [
         "fotos/Adega Climatizada (4).jpeg",
         "fotos/Adega Climatizada (3).jpeg",
         "fotos/Adega Climatizada (2).jpeg"
+    ]
+  },
+  {
+    name: "Aspirador Mi Robot Vacuum Mop 2 PRO",
+    ativo: true,
+    category: "tecnologia",
+    type: "venda",
+    price: "R$ 1200,00",
+    desc: [
+        "Passa pano"
+    ],
+    photos: [
+        "fotos/Robô aspirador (5).jpeg",
+        "fotos/Robô aspirador (4).jpeg",
+        "fotos/Robô aspirador (1).jpeg",
+        "fotos/Robô aspirador (3).jpeg",
+        "fotos/Robô aspirador (2).jpeg",
+    ]
+  },
+  {
+    name: "Monitor SuperFrame Precision",
+    ativo: true,
+    category: "tecnologia",
+    type: "venda",
+    price: "R$ 700,00",
+    desc: [
+        "- 27 Polegadas",
+        "- Curvo",
+        "- Quad HD",
+        "- 124.4% sRGB",
+        "- FreeSync/G-Sync",
+        "- 1ms, 165Hz",
+        "- HDMI/DP"
+    ],
+    photos: [
+        "fotos/Monitor (1).jpeg",
+        "fotos/Monitor (2).jpeg"
+    ]
+  },
+  {
+    name: "Suporte de Mesa Articulado ELG F196",
+    ativo: true,
+    category: "tecnologia",
+    type: "venda",
+    price: "R$ 200,00",
+    desc: [
+        "- Possui 2 saídas USB",
+        "- Suporta 2 monitores de 17 a 35 polegadas"
+    ],
+    photos: [
+        "fotos/Braço 2 monitores (2).jpeg",
+        "fotos/Braço 2 monitores (1).jpeg"
+    ]
+  },
+  {
+    name: "Naguile Pequeno Triton",
+    ativo: true,
+    category: "outros",
+    type: "venda",
+    price: "R$ 360,00",
+    desc: [
+        "- Rosh Artisan Prime - Marca : SAKAMOTO",
+        "- Papel Alumínio - Predator Skin Edition - 50 Folhas",
+        "- Papel Alumínio - Predator Classic Edition - 30 Folhas",
+        "- Tela p/ Rosh - Marca : Sultan",
+        "- Kit Limpeza com 2 escovas",
+        "- Tapete",
+        "- Naguile Pequeno Triton",
+        "- Vaso",
+        "- Fogareiro 110v",
+        "- Abafador",
+        "- Pegador"
+    ],
+    photos: [
+        "fotos/Narguile (6).jpeg",
+        "fotos/Narguile (4).jpeg",
+        "fotos/Narguile (2).jpeg",
+        "fotos/Narguile (3).jpeg",
+        "fotos/Narguile (5).jpeg",
+        "fotos/Narguile (1).jpeg",
+        "fotos/Narguile (11).jpeg",
+        "fotos/Narguile (12).jpeg",
+        "fotos/fogareiro (1).jpeg",
+        "fotos/fogareiro (2).jpeg",
+        "fotos/Narguile (7).jpeg",
+        "fotos/Narguile (8).jpeg",
+        "fotos/Narguile (9).jpeg",
+        "fotos/Narguile (10).jpeg"
     ]
   },
   {
@@ -1032,7 +1152,7 @@ const ITEMS = [
     type: "venda",
     price: "R$ 350,00",
     desc: [
-        "- 220V 7800W"
+        "220V 7800W"
     ],
     photos: [
         "fotos/Chuveiro 220v.jpeg",
@@ -1058,7 +1178,7 @@ const ITEMS = [
   },
   {
     name: "Caixa de Som Tomate mts 2026",
-    ativo: true,
+    ativo: false,
     category: "tecnologia",
     type: "venda",
     price: "R$ 450,00",
@@ -1073,57 +1193,6 @@ const ITEMS = [
         "fotos/Caixa de som (2).jpeg",
         "fotos/Caixa de som (1).jpeg",
         "fotos/Caixa de som (4).jpeg"
-    ]
-  },
-  {
-    name: "Suporte de Mesa Articulado ELG F196 ",
-    ativo: true,
-    category: "tecnologia",
-    type: "venda",
-    price: "R$ 200,00",
-    desc: [
-        "- Possui 2 saídas USB",
-        "- Suporta 2 monitores de 17 a 35 polegadas"
-    ],
-    photos: [
-        "fotos/Braço 2 monitores (2).jpeg",
-        "fotos/Braço 2 monitores (1).jpeg"
-    ]
-  },
-  {
-    name: "Naguile Pequeno Triton",
-    ativo: true,
-    category: "outros",
-    type: "venda",
-    price: "R$ 360,00",
-    desc: [
-        "- Rosh Artisan Prime - Marca : SAKAMOTO",
-        "- Papel Alumínio - Predator Skin Edition - 50 Folhas",
-        "- Papel Alumínio - Predator Classic Edition - 30 Folhas",
-        "- Tela p/ Rosh - Marca : Sultan",
-        "- Kit Limpeza com 2 escovas",
-        "- Tapete",
-        "- Naguile Pequeno Triton",
-        "- Vaso",
-        "- Fogareiro 110v",
-        "- Abafador",
-        "- Pegador"
-    ],
-    photos: [
-        "fotos/Narguile (6).jpeg",
-        "fotos/Narguile (4).jpeg",
-        "fotos/Narguile (2).jpeg",
-        "fotos/Narguile (3).jpeg",
-        "fotos/Narguile (5).jpeg",
-        "fotos/Narguile (1).jpeg",
-        "fotos/Narguile (11).jpeg",
-        "fotos/Narguile (12).jpeg",
-        "fotos/fogareiro (1).jpeg",
-        "fotos/fogareiro (2).jpeg",
-        "fotos/Narguile (7).jpeg",
-        "fotos/Narguile (8).jpeg",
-        "fotos/Narguile (9).jpeg",
-        "fotos/Narguile (10).jpeg"
     ]
   }
 ];
