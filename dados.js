@@ -274,80 +274,6 @@ const ITEMS = [
     ]
   },
   {
-    name: "Duas Mesinhas de cabeceira",
-    ativo: true,
-    category: "moveis",
-    type: "venda",
-    price: "R$ 80,00",
-    desc: [
-        "Algumas marcas de uso (descascado)",
-        "Medidas: 56cm de altura, 45cm de largura e 45cm de profundidade."
-    ],
-    photos: [
-        "fotos/Mesinha de Cabeceira.jpeg",
-        "fotos/Mesinha de Cabeceira 2.jpeg"
-    ]
-  },
-  {
-    name: "Livros",
-    ativo: true,
-    category: "livros",
-    type: "venda",
-    price: "R$ 10,00 cada",
-    desc: [
-        "25 livros variados - R$ 10,00 cada - levando todos faço por 200,00",
-        "A Cabana - William P. Young",
-        "A Travessia - William P. Young",
-        "A Vingança - Christopher Reich",
-        "A Hospedeira - Stephenie Meyer",
-        "A Batalha do Apocalipse - Eduardo Spohr",
-        "Filhos do Eden - Anjos da Morte - Eduardo Spohr",
-        "Filhos do Eden - Herdeiros de Atlântida - Eduardo Spohr",
-        "Ruas Estranhas - George R.R. Martin",
-        "A Lei do Triunfo - Napoleon Hill",
-        "Azincourt - Bernard Cornwell",
-        "O Caçador de Pipas - Khaled Hosseini",
-        "O Discupulo da Madrugada - Fabio de Melo",
-        "Jogada Mortal - Harlan Coben",
-        "Não Conte a Ninguém - Harlan Coben",
-        "Os Homens que não Amavam as Mulheres - Stieg Larsson",
-        "Essencial Da Estratégia - A Arte da Guerra de Sun Tzu, O Príncipe de Nicolau Maquiavel e O Livro dos Cinco Anéis de Miyamoto Musashi",
-        "As Aventuras de Sherlock Holmes - Arthur Conan Doyle",
-        "Ficção Científica - Isaac Asimov",
-        "Eu, Robô - Isaac Asimov",
-        "Tuareg - Alberto Vázquez-Figueroa",
-        "O Homem mais Rico da Babilônia - George S. Clason",
-        "Todos se comunicam, poucos se conectam - John C. Maxwell",
-        "Mitologia Nórdica - Neil Gaiman"
-    ],
-    photos: [
-        "fotos/Livros.jpeg"
-    ]
-  },
-  {
-    name: "Quadrinhos",
-    ativo: true,
-    category: "livros",
-    type: "venda",
-    price: "Variados",
-    desc: [
-        "Coleção Ragnarok - 17 volumes - Lee Myung-Jin - R$ 50,00",
-        "Neon Genesis Evangelion Volume 1 - Yoshiyuki Sadamoto - R$ 20,00",
-        "Batman Arkham City - Paul Dini - R$ 20,00",
-        "Batman Caos em Arkham City - R$ 20,00",
-        "Batman Ano Um - Frank Miller - R$ 100,00",
-        "Constantine Hellblazer - Passagens Sombrias - Ian Rankin - R$ 15,00",
-        "Hellblazer - Jamie Delano - R$ 50,00",
-        "Hellblazer - Pandemônio - Jamie Delano - R$ 40,00",
-        "Coleção Histórica Marvel - Capitão América VOlume 1 - R$ 20,00",
-        "Classics Illustrated - Volume 01 - Moby Dick - R$ 15,00",
-        "Classics Illustrated - Volume 07 - A Queda da Casa de Usher - R$ 15,00"
-    ],
-    photos: [
-        "fotos/Quadrinhos.jpeg"
-    ]
-  },
-  {
     name: "Adega Climatizada",
     ativo: true,
     category: "eletro",
@@ -1159,6 +1085,80 @@ const ITEMS = [
         "fotos/Furadeira (3).jpeg",
         "fotos/Furadeira (2).jpeg",
         "fotos/Furadeira (1).jpeg"
+    ]
+  },
+  {
+    name: "Duas Mesinhas de cabeceira",
+    ativo: true,
+    category: "moveis",
+    type: "venda",
+    price: "R$ 80,00",
+    desc: [
+        "Algumas marcas de uso (descascado)",
+        "Medidas: 56cm de altura, 45cm de largura e 45cm de profundidade."
+    ],
+    photos: [
+        "fotos/Mesinha de Cabeceira.jpeg",
+        "fotos/Mesinha de Cabeceira 2.jpeg"
+    ]
+  },
+  {
+    name: "Livros",
+    ativo: true,
+    category: "livros",
+    type: "venda",
+    price: "R$ 10,00 cada",
+    desc: [
+        "25 livros variados - R$ 10,00 cada - levando todos faço por 200,00",
+        "A Cabana - William P. Young",
+        "A Travessia - William P. Young",
+        "A Vingança - Christopher Reich",
+        "A Hospedeira - Stephenie Meyer",
+        "A Batalha do Apocalipse - Eduardo Spohr",
+        "Filhos do Eden - Anjos da Morte - Eduardo Spohr",
+        "Filhos do Eden - Herdeiros de Atlântida - Eduardo Spohr",
+        "Ruas Estranhas - George R.R. Martin",
+        "A Lei do Triunfo - Napoleon Hill",
+        "Azincourt - Bernard Cornwell",
+        "O Caçador de Pipas - Khaled Hosseini",
+        "O Discupulo da Madrugada - Fabio de Melo",
+        "Jogada Mortal - Harlan Coben",
+        "Não Conte a Ninguém - Harlan Coben",
+        "Os Homens que não Amavam as Mulheres - Stieg Larsson",
+        "Essencial Da Estratégia - A Arte da Guerra de Sun Tzu, O Príncipe de Nicolau Maquiavel e O Livro dos Cinco Anéis de Miyamoto Musashi",
+        "As Aventuras de Sherlock Holmes - Arthur Conan Doyle",
+        "Ficção Científica - Isaac Asimov",
+        "Eu, Robô - Isaac Asimov",
+        "Tuareg - Alberto Vázquez-Figueroa",
+        "O Homem mais Rico da Babilônia - George S. Clason",
+        "Todos se comunicam, poucos se conectam - John C. Maxwell",
+        "Mitologia Nórdica - Neil Gaiman"
+    ],
+    photos: [
+        "fotos/Livros.jpeg"
+    ]
+  },
+  {
+    name: "Quadrinhos",
+    ativo: true,
+    category: "livros",
+    type: "venda",
+    price: "Variados",
+    desc: [
+        "Coleção Ragnarok - 17 volumes - Lee Myung-Jin - R$ 50,00",
+        "Neon Genesis Evangelion Volume 1 - Yoshiyuki Sadamoto - R$ 20,00",
+        "Batman Arkham City - Paul Dini - R$ 20,00",
+        "Batman Caos em Arkham City - R$ 20,00",
+        "Batman Ano Um - Frank Miller - R$ 100,00",
+        "Constantine Hellblazer - Passagens Sombrias - Ian Rankin - R$ 15,00",
+        "Hellblazer - Jamie Delano - R$ 50,00",
+        "Hellblazer - Pandemônio - Jamie Delano - R$ 40,00",
+        "Coleção Histórica Marvel - Capitão América VOlume 1 - R$ 20,00",
+        "Classics Illustrated - Volume 01 - Moby Dick - R$ 15,00",
+        "Classics Illustrated - Volume 07 - A Queda da Casa de Usher - R$ 15,00"
+    ],
+    photos: [
+        "fotos/Quadrinhos.jpeg"
     ]
   },
   {
