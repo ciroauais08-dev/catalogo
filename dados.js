@@ -345,6 +345,35 @@ const ITEMS = [
     ]
   },
   {
+    name: "Fire TV Stick HD",
+    ativo: true,
+    category: "tecnologia",
+    type: "venda",
+    price: "R$ 200,00",
+    desc: [
+        ""
+    ],
+    photos: [
+        "fotos/fire stick (1).jpeg",
+        "fotos/fire stick (2).jpeg"
+    ]
+  },
+  {
+    name: "TV Sansung Led 32\"",
+    ativo: true,
+    category: "eletro",
+    type: "venda",
+    price: "R$ 250,00",
+    desc: [
+        ""
+    ],
+    photos: [
+        "fotos/Tv 2 (1).jpeg",
+        "fotos/Tv 2 (2).jpeg",
+        "fotos/Tv 2 (3).jpeg"
+    ]
+  },
+  {
     name: "Naguile Pequeno Triton",
     ativo: true,
     category: "outros",
