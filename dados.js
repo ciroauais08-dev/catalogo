@@ -97,7 +97,6 @@ const ITEMS = [
         "- Futuropia - 180,00",
         "- Fungi - 90,00",
         "- Bananagrams - 85,00",
-        "- Jaipur - 130,00",
         "- Exploding Kittens - Para Galera - Português - 110,00",
         "- Unstable Unicorns - 90,00"
     ],
@@ -1130,7 +1129,6 @@ const ITEMS = [
         "Ficção Científica - Isaac Asimov",
         "Eu, Robô - Isaac Asimov",
         "Tuareg - Alberto Vázquez-Figueroa",
-        "O Homem mais Rico da Babilônia - George S. Clason",
         "Todos se comunicam, poucos se conectam - John C. Maxwell",
         "Mitologia Nórdica - Neil Gaiman"
     ],
