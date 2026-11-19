@@ -359,11 +359,11 @@ const ITEMS = [
     ]
   },
   {
-    name: "TV Sansung Led 32\"",
+    name: "TV Samsung Led 32\"",
     ativo: true,
     category: "eletro",
     type: "venda",
-    price: "R$ 250,00",
+    price: "R$ 300,00",
     desc: [
         ""
     ],
